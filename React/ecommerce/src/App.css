@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+/* for Heart-icon and Button Hover Effect */
+.bi-heart-fill{
+  opacity: 0;
+}
+.card:hover .bi-heart-fill{
+  opacity: 1;
+}
+.card button:hover{
+  color: white;
+  background-color: #0f3460;
+}
