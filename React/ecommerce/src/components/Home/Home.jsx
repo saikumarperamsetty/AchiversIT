@@ -3,6 +3,7 @@ import Header from '../Header/Header'
 import Carousel from './Carousel'
 import ServiceData from './ServiceData'
 import BigDiscount from './BigDiscount'
+import NewArrivals from './NewArrivals'
 
 const Home = () => {
   return (
@@ -11,6 +12,7 @@ const Home = () => {
       <Carousel/>
       <ServiceData/>
       <BigDiscount/>
+      <NewArrivals/>
     </div>
   )
 }
