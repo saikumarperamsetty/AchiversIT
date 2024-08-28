@@ -5,6 +5,7 @@ import ServiceData from './ServiceData'
 import BigDiscount from './BigDiscount'
 import NewArrivals from './NewArrivals'
 import BestSales from './BestSales'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <BigDiscount/>
       <NewArrivals/>
       <BestSales/>
+      <Footer/>
     </div>
   )
 }
