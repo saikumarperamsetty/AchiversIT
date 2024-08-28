@@ -29,7 +29,7 @@ const BigDiscount = () => {
                 </span>
                 </div>
             <div className="d-flex justify-content-between align-items-center m-2">
-                <h5 className='ms-2 p-2'>${items.price}</h5>
+                <h6 className='ms-2 p-2'>${items.price}</h6>
                 <button style={{height:'40px', width:'40px', fontSize:'25px',border:'0px', borderRadius:'50%', paddingBottom:'10px'}}>+</button>
             </div>
         </div>

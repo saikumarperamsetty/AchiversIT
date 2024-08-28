@@ -4,6 +4,7 @@ import Carousel from './Carousel'
 import ServiceData from './ServiceData'
 import BigDiscount from './BigDiscount'
 import NewArrivals from './NewArrivals'
+import BestSales from './BestSales'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <ServiceData/>
       <BigDiscount/>
       <NewArrivals/>
+      <BestSales/>
     </div>
   )
 }
