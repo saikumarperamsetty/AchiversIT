@@ -1,5 +1,6 @@
 import React from 'react'
 import { discoutProducts } from '../../Assets/Images/products'
+import { Link } from 'react-router-dom'
 
 const BigDiscount = () => {
   return (
@@ -16,9 +17,14 @@ const BigDiscount = () => {
                 <i class="bi bi-heart-fill" style={{color:'#0f3460'}}></i>
                 </div>
 
-                <div className="card-body d-flex justify-content-center">
-                    <img src={items.imgUrl} alt={items.id} className='img-fluid' style={{height:'12rem'}}/>
+                <div className="card-body">
+                  <Link to={`/product/${items.id}`}>
+                    <div className='d-flex justify-content-center'>
+                        <img src={items.imgUrl} alt={items.id} className='img-fluid' style={{height:'12rem'}}/>
+                      </div>
+                    </Link>
                 </div>
+
                 <div className="card-title">
                 <h6 className='ms-4 p-1'>{items.productName}</h6>
                 <span className='ms-4'><i className="bi bi-star-fill" style={{color:'#ffcd4e'}}></i>
