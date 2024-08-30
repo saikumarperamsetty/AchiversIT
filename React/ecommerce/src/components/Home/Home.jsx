@@ -1,5 +1,4 @@
 import React from 'react'
-import Header from '../Header/Header'
 import Carousel from './Carousel'
 import ServiceData from './ServiceData'
 import BigDiscount from './BigDiscount'
@@ -10,7 +9,6 @@ import Footer from '../Footer/Footer'
 const Home = () => {
   return (
     <div>
-      <Header/>
       <Carousel/>
       <ServiceData/>
       <BigDiscount/>

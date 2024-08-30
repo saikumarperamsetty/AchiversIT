@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { products } from '../../Assets/Images/products'
+import { Link } from 'react-router-dom';
 
 const NewArrivals = () => {
 
@@ -26,7 +27,9 @@ const NewArrivals = () => {
                 <div className="col-md-4">
             <div className="card" style={{height:'100%'}}>
                 <div className='card-body d-flex justify-content-center'>
+                    <Link to={`/product/${items.id}`}>
                     <img src={items.imgUrl} className='img-fluid' alt={items.id} style={{height:'12rem'}}/>
+                    </Link>
                 </div>
                 <div className="card-title">
                     <h6 className='ms-4 p-1'>{items.productName}</h6>
