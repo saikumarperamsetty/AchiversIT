@@ -47,3 +47,24 @@ print(validateLogin1)
 balance = 3143
 balance += 500
 print(balance)
+
+
+# 3. Logical Operators:
+# and => True and  True = True
+# or => True or False = True
+# not => complementary --> it means if anything is True result is False, --> it means if anything is False result is True
+
+# Ex: with boolean values
+print(True and True)
+print(True and False)
+print(True)
+
+# Ex: with non-boolean values
+print(28 and 29 and 0 and 20) #0
+print('' or 0 or "" or None) #none
+print(not "") #false
+print(not " ") #true
+
+age = 14
+vote = age >= 18
+print(not vote)
