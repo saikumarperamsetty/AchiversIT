@@ -149,3 +149,28 @@ num = 28
 resul = 'divisable' if num%2 == 0 else 'not divisable'
 print(resul)
 
+# 7. Special Operators (it is referring to the Address)
+# 7.1 Membership Operators: in, not in
+# 7.2 Identity Operators: is, is not
+
+# Ex:
+# 7.1 Membership Operators: in, not in
+str = 'sai kumar JR NTR'
+print('sai' in str)
+print('sai ntr' in str)
+print('Python' not in str)
+print('JR NTR' not in str)
+
+# Ex:
+# 7.2 Membership Operators: iS, is not
+str1 = 'apple'
+str2 = 'apple'
+print(id(str1))
+print(id(str2))
+print(str1 is str2)
+
+str11 = 'apple'
+str22 = 'APPLE'
+print(id(str11))
+print(id(str22))
+print(str11 is not str22)
