@@ -1,0 +1,5 @@
+f = open('sample.txt','r')
+f.write('Learning C is also Easy\n')
+read = f.read()
+print(read)
+f.close()

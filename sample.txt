@@ -1,0 +1,5 @@
+Learning Python is Easy
+Learning Java is Difficult
+Learning JavaScript is also Difficult
+Learning C++ is also Easy
+Learning C is also Easy
