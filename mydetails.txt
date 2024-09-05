@@ -1,2 +1,1 @@
-Hi, I am Sai Kumar
-I want to become Python Developer
+This is with example in file handling
