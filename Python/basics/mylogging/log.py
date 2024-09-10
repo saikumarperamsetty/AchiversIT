@@ -1,6 +1,7 @@
 import logging
 
 #Ex:1
+logging.basicConfig(level=logging.DEBUG, filename='loginfo.txt',format='%(asctime)s %(message)s')
 print('DEBUG.')
 logging.debug('Its DEBUG message.')
 print('INFO..')
@@ -12,7 +13,7 @@ logging.error('its a ERROR message....')
 print('CRITICAL.....')
 logging.critical('its CRITICAL message.....')
 
-#Ex:2
+Ex:2
 logging.basicConfig(filename="abc.txt",
                     format='%(asctime)s %(levelname)s-%(message)s'
                     )
