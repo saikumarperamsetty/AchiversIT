@@ -1,0 +1,15 @@
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 ERROR-log error message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 CRITICAL-log critical message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 ERROR-log error message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 ERROR-log error message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 CRITICAL-log critical message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 ERROR-log error message
+2024-09-10 14:09:15,887 WARNING-log warning message
+2024-09-10 14:09:15,887 ERROR-log error message
+2024-09-10 14:09:15,887 WARNING-log warning message
