@@ -81,3 +81,17 @@ print(obj.__dict__)
 obj.instanceMethod()
 obj.city = 'UK'
 print(obj.__dict__)
+
+# Ex:4
+# Local Variables: temporory variables
+print('\n')
+class Test:
+    def m1(self):
+        a = 10
+        print(a)
+    def m2(self):
+        b = 20
+        print(b)
+test = Test()
+test.m1()
+test.m2()
