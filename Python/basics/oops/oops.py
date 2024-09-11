@@ -111,8 +111,19 @@ class Test1:
         del self.c
         del self.b
 
+
 obj = Test1()
+obj1 = Test1()
+obj2 = Test1()
+#normal way to print values
 obj.m2()
 print(obj.__dict__)
 obj.d = 40
 print(obj.d)
+
+obj1 = Test1()
+obj2 = Test1()
+del obj1.a  #if we delete in obj1 not effected in obj2
+del obj2.b  #if we delete in obj2 not effected in obj1
+print(obj1.__dict__)
+print(obj2.__dict__)
