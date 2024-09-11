@@ -64,10 +64,20 @@ obj.instance()
 # Ex:4
 print('\n')
 class Employe:
+    #constructor method
     def __init__(self):
         self.name = 'sai kumar'
         self.age = 28
         self.salary = 94000
         self.city = 'Bangalore'
-emp = Employe()
-print(emp.__dict__)
+
+    #constructor method
+    def instanceMethod(self):
+        self.name = 'SANIO ANDERSEN'
+        self.age = 19
+
+obj = Employe()
+print(obj.__dict__)
+obj.instanceMethod()
+obj.city = 'UK'
+print(obj.__dict__)
