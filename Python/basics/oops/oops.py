@@ -60,3 +60,14 @@ class className():
         print('Instance Function Excuted..')
 obj = className()
 obj.instance()
+
+# Ex:4
+print('\n')
+class Employe:
+    def __init__(self):
+        self.name = 'sai kumar'
+        self.age = 28
+        self.salary = 94000
+        self.city = 'Bangalore'
+emp = Employe()
+print(emp.__dict__)
