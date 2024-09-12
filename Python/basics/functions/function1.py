@@ -62,6 +62,15 @@
 
 # 3.Default Arguments:
 # Ex:9
-def wish(msg,name='Guest'):
-    print('Hello',name,msg)
-wish(name='Sai Kumar',msg='Thank you')
+# def wish(msg,name='Guest'):
+#     print('Hello',name,msg)
+# wish(name='Sai Kumar',msg='Thank you')
+
+# 3.Variable Length Positional Arguments:(*)
+# Ex:10
+def f1(*n):
+    total = 0
+    for i in n:
+        total = total + i
+        print("The Sum =",total)
+f1(10,20,30)
