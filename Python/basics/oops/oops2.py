@@ -16,6 +16,7 @@ print("t2:",t1.x,t2.y)
 
 #Different types of Accessing Static variable in Python
 # Ex:2
+print('\n')
 class Test:
     a = 28
     def __init__(self):
@@ -65,15 +66,32 @@ print("Welcome to Stanchat Bank")
 name = input("Enter Your Name: ")
 c = Customer(name)
 while True:
-    print("d-Deposit \nw-Withdraw \ne-Exit")
-    option = input("choose your option: ")
-    if option == 'd' or option == 'D':
-        amt = float(input("Enter your amount:"))
-        c.deposit(amt)
-    elif option == 'w' or option == 'W':
-        amt = float(input("Enter your amount: "))
-        c.withdraw(amt)
-    elif option == 'e' or option == 'E':
-        sys.exit()
-    else:
-        print('Invalid Option. Please choose a valid Option..!')
+        print("d-Deposit \nw-Withdraw \ne-Exit")
+        option = input("choose your option: ")
+        if option == 'd' or option == 'D':
+            amt = float(input("Enter your amount:"))
+            c.deposit(amt)
+        elif option == 'w' or option == 'W':
+            amt = float(input("Enter your amount: "))
+            c.withdraw(amt)
+        elif option == 'e' or option == 'E':
+            print('Thank you for using the Application.!')
+            sys.exit()
+        else:
+            print('Invalid Option. Please choose a valid Option..!')
+
+
+# Ex: 4
+# Local Variables in Python
+print('\n')
+class Temp:
+    def m1(self):
+        x = 28
+        print(x)
+    def m2(self):
+        y = 29
+        print(y)    #inside method we can access the Local Variable
+        # print(x)    #outside method we can't access the Local Variable
+obj = Temp()
+obj.m1()
+obj.m2()
