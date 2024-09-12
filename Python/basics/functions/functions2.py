@@ -10,12 +10,26 @@
 
 # Local Variable:
 # Ex:
-def m3():
-    z=12    #local variable
-    print(z)
-def m4():
-    y=99
-    print(y)    #local variable
-    # print(z)    #Other function variable not able to access in m4
-m3()
-m4()
+# def m3():
+#     z=12    #local variable
+#     print(z)
+# def m4():
+#     y=99
+#     print(y)    #local variable
+#     # print(z)    #Other function variable not able to access in m4
+# m3()
+# m4()
+
+# Global Keyword:
+# Ex:
+a=10
+def p1():
+    global b    #All b values are global now
+    b=28
+    # print(a)
+    print(b)
+def p2():
+    c=30
+    print(b)
+p1()
+p2()
