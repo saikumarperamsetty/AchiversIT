@@ -2,29 +2,39 @@
 # def functionName():
 #     -----
 
-# Ex:1
-def greet(name):
-    print('Hii',name,'Good Evening to All..! I am From greet Function')
-greet('sai')
+# # Ex:1
+# def greet(name):
+#     print('Hii',name,'Good Evening to All..! I am From greet Function')
+# greet('sai')
 
-#Ex:2
-def square(x):
-    print('\nSquare of ',x ,'is =', x * x)
-square(7)
+# #Ex:2
+# def square(x):
+#     print('\nSquare of ',x ,'is =', x * x)
+# square(7)
 
-#Ex:3
-print('\n')
-def add(i,j):
-    print('addition = ',i+j)
-def mul(i,j):
-    print('multiplication = ',i*j)
-add(20,8)
-mul(28,33)
+# #Ex:3
+# print('\n')
+# def add(i,j):
+#     print('addition = ',i+j)
+# def mul(i,j):
+#     print('multiplication = ',i*j)
+# add(20,8)
+# mul(28,33)
 
-#Ex:4
-print('\n')
-def add(a,b):
-    sum = a+b
-    return sum
-result = add(20,8)
-print(result)
+# #Ex:4
+# print('\n')
+# def add(a,b):
+#     sum = a+b
+#     return sum
+# result = add(20,8)
+# print(result)
+
+#Ex:5
+# How to Print Even or Odd Numbers in Python?
+def even_odd(num):
+    if num % 2 == 0:
+        print("Even Number")
+    else:
+        print("Odd Number")
+even_odd(28)
+even_odd(29)
