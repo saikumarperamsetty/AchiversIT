@@ -37,13 +37,29 @@
 # nonlocal Keyword:
 # used in nested classes - neither global nor local
 # Ex:
-def outer():
-    outer_var = 28
-    def inner():
-        nonlocal outer_var
-        outer_var +=1
-        print(outer_var)
-        print('inside Inner outer_var= ',outer_var)
-    inner()
-    print('inside Outer outer_var= ',outer_var)
-outer()
+# def outer():
+#     outer_var = 28
+#     def inner():
+#         nonlocal outer_var
+#         outer_var +=1
+#         print(outer_var)
+#         print('inside Inner outer_var= ',outer_var)
+#     inner()
+#     print('inside Outer outer_var= ',outer_var)
+# outer()
+
+
+# Anonymous Function or lambda function
+# definition: declaring a function without a name are called Anonymous function or lambda function 
+
+# for Ex: Normal Function 
+def nf(h):
+    return h*h
+
+# for Anonymous Function or lambda function
+lambda f: f*f
+
+# Ex: by using lambda Expression find Square of a Number?
+square = lambda sq: sq*sq
+print('The Square of 28 is ',square(28))
+print('The Square of 82 is ',square(82))
