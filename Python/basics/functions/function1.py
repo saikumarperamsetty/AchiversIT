@@ -50,12 +50,18 @@
 
 # 2.keyword Arguments:
 #Ex:7
-def wish(name,msg):
-    print("Hello",name,msg)
-wish(msg='Having great day Ahead..!',name='Sai Kumar')
+# def wish(name,msg):
+#     print("Hello",name,msg)
+# wish(msg='Having great day Ahead..!',name='Sai Kumar')
 
 #Ex:8
-def calc(x,y):
-    print(x+y)
-    print(x-y)
-calc(y=11,x=42)
+# def calc(x,y):
+#     print(x+y)
+#     print(x-y)
+# calc(y=11,x=42)
+
+# 3.Default Arguments:
+# Ex:9
+def wish(msg,name='Guest'):
+    print('Hello',name,msg)
+wish(name='Sai Kumar',msg='Thank you')
