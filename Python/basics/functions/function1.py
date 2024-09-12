@@ -68,9 +68,17 @@
 
 # 3.Variable Length Positional Arguments:(*)
 # Ex:10
-def f1(*n):
-    total = 0
-    for i in n:
-        total = total + i
-        print("The Sum =",total)
-f1(10,20,30)
+# def f1(*n):
+#     total = 0
+#     for i in n:
+#         total = total + i
+#         print("The Sum =",total)
+# f1(10,20,30)
+
+# 3.Variable Length Keyword Arguments:(**kwargs)
+# Ex:10
+def demo(**kwargs):
+    for k,v in kwargs.items():
+        print(k, '=', v)
+demo(e1=28,e2=33,e3=25)
+demo(name='sai',age=28,subject='python')
