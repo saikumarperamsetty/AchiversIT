@@ -20,3 +20,11 @@ def mul(i,j):
     print('multiplication = ',i*j)
 add(20,8)
 mul(28,33)
+
+#Ex:4
+print('\n')
+def add(a,b):
+    sum = a+b
+    return sum
+result = add(20,8)
+print(result)
