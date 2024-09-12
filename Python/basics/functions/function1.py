@@ -31,10 +31,19 @@
 
 #Ex:5
 # How to Print Even or Odd Numbers in Python?
-def even_odd(num):
-    if num % 2 == 0:
-        print("Even Number")
-    else:
-        print("Odd Number")
-even_odd(28)
-even_odd(29)
+# def even_odd(num):
+#     if num % 2 == 0:
+#         print("Even Number")
+#     else:
+#         print("Odd Number")
+# even_odd(28)
+# even_odd(29)
+
+
+# How to work with Arguments in Python?
+# Arguments:
+# 1.Positional
+#Ex:6
+def sum(a,b):
+    print(a+b)
+sum(20,8)
