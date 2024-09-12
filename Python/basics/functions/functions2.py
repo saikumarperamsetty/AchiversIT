@@ -22,14 +22,28 @@
 
 # Global Keyword:
 # Ex:
-a=10
-def p1():
-    global b    #All b values are global now
-    b=28
-    # print(a)
-    print(b)
-def p2():
-    c=30
-    print(b)
-p1()
-p2()
+# a=10
+# def p1():
+#     global b    #All b values are global now
+#     b=28
+#     # print(a)
+#     print(b)
+# def p2():
+#     c=30
+#     print(b)
+# p1()
+# p2()
+
+# nonlocal Keyword:
+# used in nested classes - neither global nor local
+# Ex:
+def outer():
+    outer_var = 28
+    def inner():
+        nonlocal outer_var
+        outer_var +=1
+        print(outer_var)
+        print('inside Inner outer_var= ',outer_var)
+    inner()
+    print('inside Outer outer_var= ',outer_var)
+outer()
