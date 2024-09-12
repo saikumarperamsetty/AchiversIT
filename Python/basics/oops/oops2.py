@@ -1,18 +1,18 @@
 # Ex:1
-# class Test:
-#     #static variable
-#     x = 10
-#     def __init__(self):
-#         #instance variable
-#         self.y = 20
-# t1 = Test()
-# t2 = Test()
-# print("t1:",t1.x,t2.y)
-# print("t2:",t1.x,t2.y)
-# Test.x = 888    #with the help of classname we are adding the value
-# t1.y = 999      #with the help of object reference we are adding the value & it is not changed
-# print("t1:",t1.x,t2.y)
-# print("t2:",t1.x,t2.y)
+class Test:
+    #static variable
+    x = 10
+    def __init__(self):
+        #instance variable
+        self.y = 20
+t1 = Test()
+t2 = Test()
+print("t1:",t1.x,t2.y)
+print("t2:",t1.x,t2.y)
+Test.x = 888    #with the help of classname we are adding the value
+t1.y = 999      #with the help of object reference we are adding the value & it is not changed
+print("t1:",t1.x,t2.y)
+print("t2:",t1.x,t2.y)
 
 #Different types of Accessing Static variable in Python
 # Ex:2
@@ -38,3 +38,42 @@ print(Test.a)
 t.m1()
 t.m2()
 t.m3()
+
+
+# Ex:3
+# Bank Operation in python
+import sys
+"""Bank Operation in Python"""
+bankname = 'Stanchat Bank'
+class Customer:
+    def __init__(self,name,balance=0.0):
+        self.name = name
+        self.balance = balance
+
+    def deposit(self,amt):
+        self.balance = self.balance + amt
+        print("Balance after DEPOSIT: ",self.balance)
+    
+    def withdraw(self,amt):
+        if amt>self.balance:
+            print("Insufficient Funds: cannot perform the Operation....")
+            sys.exit()
+            self.balance = self.balance - amt
+            print("Balance after WITHDRAW: ",self.balance)
+            
+print("Welcome to Stanchat Bank")
+name = input("Enter Your Name: ")
+c = Customer(name)
+while True:
+    print("d-Deposit \nw-Withdraw \ne-Exit")
+    option = input("choose your option: ")
+    if option == 'd' or option == 'D':
+        amt = float(input("Enter your amount:"))
+        c.deposit(amt)
+    elif option == 'w' or option == 'W':
+        amt = float(input("Enter your amount: "))
+        c.withdraw(amt)
+    elif option == 'e' or option == 'E':
+        sys.exit()
+    else:
+        print('Invalid Option. Please choose a valid Option..!')
