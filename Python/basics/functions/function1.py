@@ -42,8 +42,20 @@
 
 # How to work with Arguments in Python?
 # Arguments:
-# 1.Positional
+# 1.Positional Arguments:
 #Ex:6
-def sum(a,b):
-    print(a+b)
-sum(20,8)
+# def sum(a,b):
+#     print(a+b)
+# sum(20,8)
+
+# 2.keyword Arguments:
+#Ex:7
+def wish(name,msg):
+    print("Hello",name,msg)
+wish(msg='Having great day Ahead..!',name='Sai Kumar')
+
+#Ex:8
+def calc(x,y):
+    print(x+y)
+    print(x-y)
+calc(y=11,x=42)
