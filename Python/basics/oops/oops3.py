@@ -72,13 +72,30 @@
 
 # 3. Static methods
 # EX:4
-class MathOperation:
-    @staticmethod
-    def add(a,b):
-        return a+b
-    @staticmethod
-    def mul(x,y):
-        return x*y
-mp = MathOperation()
-print(mp.add(20,8))
-print(mp.mul(10,28))
+# class MathOperation:
+#     @staticmethod
+#     def add(a,b):
+#         return a+b
+#     @staticmethod
+#     def mul(x,y):
+#         return x*y
+# mp = MathOperation()
+# print(mp.add(20,8))
+# print(mp.mul(10,28))
+
+# Ex:5
+class Engine:
+    def __init__(self,horsepower):
+        self.horsepower = horsepower
+    def start(self):
+        print(f"Engine with {self.horsepower} HP is started")
+class Car:
+    def __init__(self,brand,model,horsepower):
+        self.brand = brand
+        self.model = model
+        self.engine = Engine(horsepower)
+    def drive(self):
+        print(f"Driving {self.brand} Car with, {self.model} model")
+        self.engine.start()
+car = Car(f'RANGEROVER','heigin',300)
+car.drive()
