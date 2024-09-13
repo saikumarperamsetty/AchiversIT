@@ -84,18 +84,34 @@
 # print(mp.mul(10,28))
 
 # Ex:5
-class Engine:
-    def __init__(self,horsepower):
-        self.horsepower = horsepower
-    def start(self):
-        print(f"Engine with {self.horsepower} HP is started")
+# class Engine:
+#     def __init__(self,horsepower):
+#         self.horsepower = horsepower
+#     def start(self):
+#         print(f"Engine with {self.horsepower} HP is started")
+# class Car:
+#     def __init__(self,brand,model,horsepower):
+#         self.brand = brand
+#         self.model = model
+#         self.engine = Engine(horsepower)
+#     def drive(self):
+#         print(f"Driving {self.brand} Car with, {self.model} model")
+#         self.engine.start()
+# car = Car(f'RANGEROVER','heigin',300)
+# car.drive()
+
+# Inner Class:
+# Ex:6
 class Car:
-    def __init__(self,brand,model,horsepower):
+    def __init__(self,brand,model):
         self.brand = brand
         self.model = model
-        self.engine = Engine(horsepower)
-    def drive(self):
-        print(f"Driving {self.brand} Car with, {self.model} model")
+        self.engine = self.Engine()
+    class Engine:
+        def start(self):
+            print(f'Engine is started..')
+    def display(self):
+        print(f'Car: {self.brand} car with {self.model} model')
         self.engine.start()
-car = Car(f'RANGEROVER','heigin',300)
-car.drive()
+car = Car('Maruti','Accord')
+car.display()
