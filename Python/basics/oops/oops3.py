@@ -54,17 +54,31 @@
 
 # 2. class methods
 # EX:3
-class Car:
-    total_cars = 0
-    def __init__(self,brand,model):
-        self.brand = brand
-        self.model = model
-        Car.total_cars +=1
-    @classmethod
-    def total(cls):
-        print(f'Total Cars: {cls.total_cars}')
-car1 = Car('Maruti','jreky')
-car2 = Car('Toyota','krim')
-car3 = Car('Skoda','prino')
-car4 = Car('Tata','qeril')
-Car.total()
+# class Car:
+#     total_cars = 0
+#     def __init__(self,brand,model):
+#         self.brand = brand
+#         self.model = model
+#         Car.total_cars +=1
+#     @classmethod
+#     def total(cls):
+#         print(f'Total Cars: {cls.total_cars}')
+# car1 = Car('Maruti','jreky')
+# car2 = Car('Toyota','krim')
+# car3 = Car('Skoda','prino')
+# car4 = Car('Tata','qeril')
+# Car.total()
+
+
+# 3. Static methods
+# EX:4
+class MathOperation:
+    @staticmethod
+    def add(a,b):
+        return a+b
+    @staticmethod
+    def mul(x,y):
+        return x*y
+mp = MathOperation()
+print(mp.add(20,8))
+print(mp.mul(10,28))
