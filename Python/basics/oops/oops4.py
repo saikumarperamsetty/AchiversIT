@@ -27,17 +27,30 @@
 # child.childProfession()
 
 # Task 3: Multilevel Inheritance 
-class Vehicle:
-    def general_usage(self):
-        print('Vehicle is for general usage.')
-class Car(Vehicle):
-    def special_usage(self):
-        print('Car is for personal usage..')
-class ElectricCar(Car):
-    def eco_usage(self):
-        print('ElectricCar is for environment friendly...')
+# class Vehicle:
+#     def general_usage(self):
+#         print('Vehicle is for general usage.')
+# class Car(Vehicle):
+#     def special_usage(self):
+#         print('Car is for personal usage..')
+# class ElectricCar(Car):
+#     def eco_usage(self):
+#         print('ElectricCar is for environment friendly...')
 
-e_car = ElectricCar()
-e_car.eco_usage()
-e_car.special_usage()
-e_car.general_usage()
+# e_car = ElectricCar()
+# e_car.eco_usage()
+# e_car.special_usage()
+# e_car.general_usage()
+
+# Task 4: Calling Parent Class Method
+class Person:
+    def greet(self):
+        print('Hello Good morning Person')
+class Employee(Person):
+    def greet(self):
+        print('Hii Employee')
+
+employee = Employee()
+employee.greet()
+person = Person()
+person.greet()
