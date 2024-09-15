@@ -59,34 +59,51 @@
 # class Shape:
 #     def __init__(self, shape_type):
 #         self.shape_type = shape_type
-
 #     def __str__(self):
 #         return f"Shape: {self.shape_type}"
-
 # class Circle(Shape):
 #     def __init__(self, radius):
 #         # Call the constructor of the parent class with a specific shape type
 #         super().__init__("Circle")
 #         self.radius = radius
-
 #     def __str__(self):
 #         return f"{super().__str__()}, Radius: {self.radius}"
-
 # # Example usage:
 # circle = Circle(28)
 # print(circle)
 
 # Task 6: Hierarchical Inheritance
-class Plant:
-    def earth(self):
-        print('Plants gives Oxyzen in nature.!')
-class Tree(Plant):
-    def grow(self):
-        print('After plant Trees will grow')
-class Flower(Plant):
-    def give(self):
-        print('Plants gives a Beautiful Flowers also')
-tree = Tree()
-tree.grow()
-flower = Flower() 
-flower.give()
+# class Plant:
+#     def earth(self):
+#         print('Plants gives Oxyzen in nature.!')
+# class Tree(Plant):
+#     def grow(self):
+#         print('After plant Trees will grow')
+# class Flower(Plant):
+#     def give(self):
+#         print('Plants gives a Beautiful Flowers also')
+# tree = Tree()
+# tree.grow()
+# flower = Flower() 
+# flower.give()
+
+# Hybrid Inheritance
+# Ex:
+class Engine:
+    def engine_type(self):
+        print('This Car has a Petrol Engine')
+class Battery:
+    def battery_type(self):
+        print('It is 100kwh battery')
+class ElectricalVahicle(Engine,Battery):
+    def eco_friendly(self):
+        print('Electrical Vehicles are Environment Friendly..')
+class Vehical(ElectricalVahicle):
+    def fuel_efficient(self):
+        print('Vehicles are Fuel effivient')
+vehicle = Vehical()
+vehicle.engine_type()
+vehicle.battery_type()
+vehicle.eco_friendly()
+vehicle.fuel_efficient()
+
