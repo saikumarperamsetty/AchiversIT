@@ -89,21 +89,37 @@
 
 # Hybrid Inheritance
 # Ex:
-class Engine:
-    def engine_type(self):
-        print('This Car has a Petrol Engine')
-class Battery:
-    def battery_type(self):
-        print('It is 100kwh battery')
-class ElectricalVahicle(Engine,Battery):
-    def eco_friendly(self):
-        print('Electrical Vehicles are Environment Friendly..')
-class Vehical(ElectricalVahicle):
-    def fuel_efficient(self):
-        print('Vehicles are Fuel effivient')
-vehicle = Vehical()
-vehicle.engine_type()
-vehicle.battery_type()
-vehicle.eco_friendly()
-vehicle.fuel_efficient()
+# class Engine:
+#     def engine_type(self):
+#         print('This Car has a Petrol Engine')
+# class Battery:
+#     def battery_type(self):
+#         print('It is 100kwh battery')
+# class ElectricalVahicle(Engine,Battery):
+#     def eco_friendly(self):
+#         print('Electrical Vehicles are Environment Friendly..')
+# class Vehical(ElectricalVahicle):
+#     def fuel_efficient(self):
+#         print('Vehicles are Fuel effivient')
+# vehicle = Vehical()
+# vehicle.engine_type()
+# vehicle.battery_type()
+# vehicle.eco_friendly()
+# vehicle.fuel_efficient()
 
+# Hirarchical Inheritance
+class Bird:
+    def lay_legs(self):
+        print('Birds has lay legs')
+class Sparrow(Bird):
+    def can_fly(self):
+        print('sparrow can Fly')
+class Penguine(Bird):
+    def can_swim(self):
+        print('Penguine can Swim')
+sparrow = Sparrow()
+sparrow.lay_legs()
+sparrow.can_fly()
+penguine = Penguine()
+penguine.lay_legs()
+penguine.can_swim()
