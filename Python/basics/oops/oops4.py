@@ -43,14 +43,35 @@
 # e_car.general_usage()
 
 # Task 4: Calling Parent Class Method
-class Person:
-    def greet(self):
-        print('Hello Good morning Person')
-class Employee(Person):
-    def greet(self):
-        print('Hii Employee')
+# class Person:
+#     def greet(self):
+#         print('Hello Good morning Person')
+# class Employee(Person):
+#     def greet(self):
+#         print('Hii Employee')
 
-employee = Employee()
-employee.greet()
-person = Person()
-person.greet()
+# employee = Employee()
+# employee.greet()
+# person = Person()
+# person.greet()
+
+# Task 5: Use of super() Keyword
+class Shape:
+    def __init__(self, shape_type):
+        self.shape_type = shape_type
+
+    def __str__(self):
+        return f"Shape: {self.shape_type}"
+
+class Circle(Shape):
+    def __init__(self, radius):
+        # Call the constructor of the parent class with a specific shape type
+        super().__init__("Circle")
+        self.radius = radius
+
+    def __str__(self):
+        return f"{super().__str__()}, Radius: {self.radius}"
+
+# Example usage:
+circle = Circle(28)
+print(circle)
