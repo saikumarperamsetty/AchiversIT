@@ -27,11 +27,22 @@
 # print(result_gen)
 
 # How to Create Coundown Function by using generator function
-def countdown(num):
-    print('coundown starts:')
-    while num > 0:
-        yield num
-        num = num-1
-value = countdown(10)
-for i in value:
+# def countdown(num):
+#     print('coundown starts:')
+#     while num > 0:
+#         yield num
+#         num = num-1
+# value = countdown(10)
+# for i in value:
+#     print(i)
+
+# Fibonacci Number using generator Function
+def fibinacci():
+    a,b = 0,1
+    while True:
+        yield a
+        a,b=b,a+b
+for i in fibinacci():
+    if i >150:
+        break
     print(i)
