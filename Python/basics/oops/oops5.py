@@ -17,16 +17,28 @@
 
 
 # Ex:2 How Private Methods work in Python?
-class Employee:
-    def __init__(self,name,salary):
-        self.name = name
-        self.__salary = salary
-    def __caluclate_bonus(self):
-        return self.__salary * 1.0
-    def show_emp_details(self):
-        bonus = self.__caluclate_bonus()
-        print(f'Employee:: Name:{self.name} Salary={self.__salary} Bonus={bonus}')
+# class Employee:
+#     def __init__(self,name,salary):
+#         self.name = name
+#         self.__salary = salary
+#     def __caluclate_bonus(self):
+#         return self.__salary * 1.0
+#     def show_emp_details(self):
+#         bonus = self.__caluclate_bonus()
+#         print(f'Employee:: Name:{self.name} Salary={self.__salary} Bonus={bonus}')
 
-employee = Employee('Sai Kumar',62000)
-employee.show_emp_details()
-# print(employee._Employee__caluclate_bonus())   #This is Name Mangling in Python (It is not Recommended)
+# employee = Employee('Sai Kumar',62000)
+# employee.show_emp_details()
+# # print(employee._Employee__caluclate_bonus())   #This is Name Mangling in Python (It is not Recommended)
+
+
+# Ex:3 Name Mangling in Python?
+class Test:
+    def __init__(self):
+        self.__private_var = 'I am From Private'
+    def get_private_var(self):
+        return self.__private_var
+obj = Test()
+print(obj.get_private_var())
+# print(obj.__private_var)      # directly we are not able to Access the Private method through object
+print(obj._Test__private_var)   # directly we Can Access the Private method through object, it is Called Name Mangling
