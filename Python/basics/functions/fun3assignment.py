@@ -44,16 +44,42 @@
 # Write a decorator that executes a function three times. Test this decorator on a function that prints a given message?
 
 # Decorator to execute a function three times
-def execute_three_times(func):
-    def wrapper(*args,**kwargs):
-          for _ in range(3):
-            func(*args,**kwargs)
+# def execute_three_times(func):
+#     def wrapper(*args,**kwargs):
+#           for _ in range(3):
+#             func(*args,**kwargs)
+#     return wrapper
+
+# # Function to print a message
+# @execute_three_times
+# def print_message(message):
+#     print(message)
+
+# # Call the function
+# print_message('Hello, this message will be printed three(3) times!')
+
+
+# 4. Access Control Decorator: 
+# Create a decorator that checks if a user is an admin before allowing the execution of a function. If the user is not an admin, print "Access Denied". Test with a simple function that returns a protected message?
+
+# Decorator to check if a user is an admin
+def admin_requied(func):
+    def wrapper(user):
+        if user.get('is_admin'):
+            return func(user)  # Call the function if the user is admin
+        else:
+            print('Access Denied..')      # Print message if not admin
     return wrapper
 
-# Function to print a message
-@execute_three_times
-def print_message(message):
-    print(message)
+# Function to return a protected message
+@admin_requied
+def protected_message(user):
+    return'This is Protected, for Admins only'
 
-# Call the function
-print_message('Hello, this message will be printed three(3) times!')
+# Test with an admin user
+admin_user = {'name':'sai','is_admin':True}
+print(protected_message(admin_user))       # Should print the protected message
+
+# Test with a non-admin user
+non_admin_user = {'name':'sai','is_admin':False}
+print(protected_message(non_admin_user))  # Should print "Access Denied"
