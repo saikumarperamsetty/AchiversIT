@@ -89,19 +89,47 @@
 # Write a decorator that accepts a string argument and prints it before executing the function. Apply it to a function that returns a greeting message?
 
 # Decorator that accepts a string argument
-def print_message(message):
-    def decorator(func):
-        def wrapper(*args,**kwargs):
-            print(message)  # Print the message before executing the function
-            return func(*args,**kwargs) # Call the original function
-        return wrapper
-    return decorator
+# def print_message(message):
+#     def decorator(func):
+#         def wrapper(*args,**kwargs):
+#             print(message)  # Print the message before executing the function
+#             return func(*args,**kwargs) # Call the original function
+#         return wrapper
+#     return decorator
+
+# # Function to return a greeting message
+# @print_message("Executing the greeting function...")
+# def greet(name):
+#     return f'Hi Mr.{name}!'
+
+# # Call the function
+# result = greet('PERAMSETTY SAI KUMAR')
+# print(result)
+
+
+# 6. Chaining Decorators: 
+# Implement two simple decorators (e.g., one that converts the result to uppercase and another that doubles the result). Apply both decorators to a single function to demonstrate chaining?
+
+# Decorator to convert result to uppercase
+def uppercase_decorator(func):
+    def wrapper(*args,**kwargs):
+        result = func(*args,**kwargs)     # Call the original function
+        return result.upper()       # Convert result to uppercase
+    return wrapper
+
+# Decorator to double the result
+def double_decorator(func):
+    def wrapper(*args,**kwargs):
+        result = func(*args,**kwargs)     # Call the original function
+        return result * 2     # Double the result
+    return wrapper
 
 # Function to return a greeting message
-@print_message("Executing the greeting function...")
+@uppercase_decorator
+@double_decorator
 def greet(name):
-    return f'Hi Mr.{name}!'
+    return f"Hello: {name}    "
 
 # Call the function
-result = greet('PERAMSETTY SAI KUMAR')
-print(result)
+res = greet('sai')
+print(res)
