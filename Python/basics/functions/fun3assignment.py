@@ -111,25 +111,57 @@
 # Implement two simple decorators (e.g., one that converts the result to uppercase and another that doubles the result). Apply both decorators to a single function to demonstrate chaining?
 
 # Decorator to convert result to uppercase
-def uppercase_decorator(func):
-    def wrapper(*args,**kwargs):
-        result = func(*args,**kwargs)     # Call the original function
-        return result.upper()       # Convert result to uppercase
-    return wrapper
+# def uppercase_decorator(func):
+#     def wrapper(*args,**kwargs):
+#         result = func(*args,**kwargs)     # Call the original function
+#         return result.upper()       # Convert result to uppercase
+#     return wrapper
 
-# Decorator to double the result
-def double_decorator(func):
-    def wrapper(*args,**kwargs):
-        result = func(*args,**kwargs)     # Call the original function
-        return result * 2     # Double the result
-    return wrapper
+# # Decorator to double the result
+# def double_decorator(func):
+#     def wrapper(*args,**kwargs):
+#         result = func(*args,**kwargs)     # Call the original function
+#         return result * 2     # Double the result
+#     return wrapper
 
-# Function to return a greeting message
-@uppercase_decorator
-@double_decorator
-def greet(name):
-    return f"Hello: {name}    "
+# # Function to return a greeting message
+# @uppercase_decorator
+# @double_decorator
+# def greet(name):
+#     return f"Hello: {name}    "
 
-# Call the function
-res = greet('sai')
-print(res)
+# # Call the function
+# res = greet('sai')
+# print(res)
+
+
+# 7. Context Management with Decorators: 
+#  Write a decorator that acts as a context manager, ensuring that a resource (e.g., a file) is opened before the function runs and closed afterward. Use it to read and print the contents of a file?
+import os
+from functools import wraps
+
+def file_context_manager(file_path):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # Ensure the file exists
+            if not os.path.exists(file_path):
+                raise FileNotFoundError(f"The file {file_path} does not exist.")
+
+            # Open the file and pass the file object to the decorated function
+            with open(file_path, 'r') as file:
+                return func(file, *args, **kwargs)
+        return wrapper
+    return decorator
+
+
+@file_context_manager('example.txt')
+def read_and_print_file(file):
+    contents = file.read()
+    print(contents)
+
+# Call the function to read and print the file contents
+try:
+    read_and_print_file()
+except FileNotFoundError as e:
+    print(e)
