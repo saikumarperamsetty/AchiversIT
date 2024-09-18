@@ -63,23 +63,45 @@
 # Create a decorator that checks if a user is an admin before allowing the execution of a function. If the user is not an admin, print "Access Denied". Test with a simple function that returns a protected message?
 
 # Decorator to check if a user is an admin
-def admin_requied(func):
-    def wrapper(user):
-        if user.get('is_admin'):
-            return func(user)  # Call the function if the user is admin
-        else:
-            print('Access Denied..')      # Print message if not admin
-    return wrapper
+# def admin_requied(func):
+#     def wrapper(user):
+#         if user.get('is_admin'):
+#             return func(user)  # Call the function if the user is admin
+#         else:
+#             print('Access Denied..')      # Print message if not admin
+#     return wrapper
 
-# Function to return a protected message
-@admin_requied
-def protected_message(user):
-    return'This is Protected, for Admins only'
+# # Function to return a protected message
+# @admin_requied
+# def protected_message(user):
+#     return'This is Protected, for Admins only'
 
-# Test with an admin user
-admin_user = {'name':'sai','is_admin':True}
-print(protected_message(admin_user))       # Should print the protected message
+# # Test with an admin user
+# admin_user = {'name':'sai','is_admin':True}
+# print(protected_message(admin_user))       # Should print the protected message
 
-# Test with a non-admin user
-non_admin_user = {'name':'sai','is_admin':False}
-print(protected_message(non_admin_user))  # Should print "Access Denied"
+# # Test with a non-admin user
+# non_admin_user = {'name':'suraj','is_admin':False}
+# print(protected_message(non_admin_user))  # Should print "Access Denied"
+
+
+# 5. Decorator with Arguments: 
+# Write a decorator that accepts a string argument and prints it before executing the function. Apply it to a function that returns a greeting message?
+
+# Decorator that accepts a string argument
+def print_message(message):
+    def decorator(func):
+        def wrapper(*args,**kwargs):
+            print(message)  # Print the message before executing the function
+            return func(*args,**kwargs) # Call the original function
+        return wrapper
+    return decorator
+
+# Function to return a greeting message
+@print_message("Executing the greeting function...")
+def greet(name):
+    return f'Hi Mr.{name}!'
+
+# Call the function
+result = greet('PERAMSETTY SAI KUMAR')
+print(result)
