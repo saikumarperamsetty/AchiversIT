@@ -125,3 +125,13 @@ class PaypalPayment(PaymentMethod):
         else:
             print('Refund Failed...')
             return False
+        
+    def complete_purchase(payment_method,amount):
+        if payment_method.authenticate():
+            if payment_method.process_payment(amount):
+                print('Payment Successful')
+                return True
+            else:
+                print('Payment Failed')
+        else:
+            print('Authentication Failed')
