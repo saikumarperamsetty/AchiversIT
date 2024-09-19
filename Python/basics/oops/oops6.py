@@ -115,3 +115,13 @@ class PaypalPayment(PaymentMethod):
         else:
             print('payment failed, because of Authentication Erroe')
             return False
+        
+    def refund(self,amount):
+        print('Refunding Amount Rs{amount} to Paypal account of :{self.email}')
+        refund_successful = True
+        if refund_successful:
+            print('Refunding Process Successfully..')
+            return True
+        else:
+            print('Refund Failed...')
+            return False
