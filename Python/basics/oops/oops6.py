@@ -83,3 +83,21 @@ class CreditCard(PaymentMethod):
         else:
             print('Refund Failed..')
             return False
+        
+class PaypalPayment(PaymentMethod):
+    def __init__(self,email):
+        self.email = email
+
+    def authonticate(self):
+        if '@' in self.email and '.' in self.email.split('@')[-1]:  #mypayment@example.com
+            print('Authenticating Paypal account of email:{self.email}')
+            
+            authenticate_successful =True
+            if authenticate_successful:
+                return True
+            else:
+                print('Authentication failed')
+                return False
+        else:
+            print('Invalid Paypal Email address')
+            return False
