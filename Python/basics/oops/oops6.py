@@ -91,7 +91,7 @@ class PaypalPayment(PaymentMethod):
     def authonticate(self):
         if '@' in self.email and '.' in self.email.split('@')[-1]:  #mypayment@example.com
             print('Authenticating Paypal account of email:{self.email}')
-            
+
             authenticate_successful =True
             if authenticate_successful:
                 return True
@@ -100,4 +100,18 @@ class PaypalPayment(PaymentMethod):
                 return False
         else:
             print('Invalid Paypal Email address')
+            return False
+        
+    def ProcessPayment(self,amount):
+        if self.authonticate():
+            print(f'Processing Paypal Payment of Amount: {amount}')
+            payment_successful = True
+            if payment_successful:
+                print('Processing Payment Successfully')
+                return True
+            else:
+                print('Payment Failedd')
+                return False
+        else:
+            print('payment failed, because of Authentication Erroe')
             return False
