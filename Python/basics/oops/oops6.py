@@ -74,3 +74,12 @@ class CreditCard(PaymentMethod):
                 return False
         else:
             return False
+        
+    def refund(self,amount):
+        print(f'Refunding Amount Rs.{amount} to Credit Card {self.card_number}')
+        refund_successfull = True
+        if refund_successfull:
+            print('Refunding Successfull')
+        else:
+            print('Refund Failed..')
+            return False
