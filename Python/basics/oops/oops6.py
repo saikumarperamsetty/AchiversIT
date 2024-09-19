@@ -25,9 +25,9 @@
 
 # Ex:2 Payment System for E-commerse Website?
 from abc import ABC,abstractmethod
-class PaymentMethod:
+class PaymentMethod(ABC):
     @abstractmethod
-    def authonticate(self):
+    def authenticate(self):
          """Authenticating the Payment Method"""
          pass
     @abstractmethod
@@ -39,20 +39,20 @@ class PaymentMethod:
          """Refunding the Amount"""
          pass
     
-class CreditCard(PaymentMethod):
-    def __init__(self,card_number,card_holder,cvv,expiry_date):
+class CreditCardPayment(PaymentMethod):
+    def __init__(self, card_number, card_holder, cvv, expiry_date):
         self.card_number = card_number.replace(' ','').replace('-','')
         self.card_holder = card_holder
         self.cvv = cvv
         self.expiry_date = expiry_date
 
-    def authonticate(self):
+    def authenticate(self):
         if len(self.card_number) == 16 and self.cvv.isdigit() and len(self.cvv) == 3:
-            print('Authenticating Credit Card Number: {self.card_number}')
+            print(f'Authenticating Credit Card Number: {self.card_number}')
             from datetime import datetime
             current_year = datetime.now().year % 100
-            current_month = datetime.now.month
-            exp_year,exp_month = map(int,self.expiry_date.split('/'))
+            current_month = datetime.now().month
+            exp_month, exp_year = map(int,self.expiry_date.split('/'))
             if (exp_year > current_year) or (exp_year == current_year and exp_month >= current_month):
                 return True
             else:
@@ -63,7 +63,7 @@ class CreditCard(PaymentMethod):
             return False
         
     def ProcessPayment(self,amount):
-        if self.authonticate():
+        if self.authenticate():
             print(f'Processing Credit Card Payment of : {amount}')
             payment_successful = True
             if payment_successful:
@@ -76,7 +76,7 @@ class CreditCard(PaymentMethod):
             return False
         
     def refund(self,amount):
-        print(f'Refunding Amount Rs.{amount} to Credit Card {self.card_number}')
+        print(f'Refunding Rs.{amount} to Credit Card {self.card_number}')
         refund_successfull = True
         if refund_successfull:
             print('Refunding Successfull')
@@ -88,12 +88,12 @@ class PaypalPayment(PaymentMethod):
     def __init__(self,email):
         self.email = email
 
-    def authonticate(self):
+    def authenticate(self):
         if '@' in self.email and '.' in self.email.split('@')[-1]:  #mypayment@example.com
-            print('Authenticating Paypal account of email:{self.email}')
+            print(f'Authenticating Paypal account of email: {self.email}')
 
-            authenticate_successful =True
-            if authenticate_successful:
+            authenticated = True
+            if authenticated:
                 return True
             else:
                 print('Authentication failed')
@@ -103,7 +103,7 @@ class PaypalPayment(PaymentMethod):
             return False
         
     def ProcessPayment(self,amount):
-        if self.authonticate():
+        if self.authenticate():
             print(f'Processing Paypal Payment of Amount: {amount}')
             payment_successful = True
             if payment_successful:
@@ -113,25 +113,36 @@ class PaypalPayment(PaymentMethod):
                 print('Payment Failedd')
                 return False
         else:
-            print('payment failed, because of Authentication Erroe')
+            print('payment failed, because of Authentication Error')
             return False
         
     def refund(self,amount):
-        print('Refunding Amount Rs{amount} to Paypal account of :{self.email}')
+        print(f'Refunding Amount Rs{amount} to Paypal account of :{self.email}')
         refund_successful = True
         if refund_successful:
-            print('Refunding Process Successfully..')
+            print('Refunding Processed Successfully..')
             return True
         else:
             print('Refund Failed...')
             return False
         
-    def complete_purchase(payment_method,amount):
-        if payment_method.authenticate():
-            if payment_method.process_payment(amount):
-                print('Payment Successful')
-                return True
-            else:
-                print('Payment Failed')
+def complete_purchase(payment_method,amount):
+    if payment_method.authenticate():
+        if payment_method.ProcessPayment(amount):
+            print('Payment Successful')
         else:
-            print('Authentication Failed')
+            print('Payment Failed')
+    else:
+        print('Authentication Failed')
+
+credit_card_payment = CreditCardPayment(
+    card_number = '1234567891234567',
+    card_holder = "Sai Kumar",
+    cvv = "123",
+    expiry_date = '12/26'
+)
+
+paypal_payment = PaypalPayment(email="saikumar28p@gmail.com")
+
+complete_purchase(credit_card_payment, 1500)
+complete_purchase(paypal_payment, 2000)
