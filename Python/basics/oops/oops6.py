@@ -61,3 +61,16 @@ class CreditCard(PaymentMethod):
         else:
             print('Invalid Credit Card Details..!')
             return False
+        
+    def ProcessPayment(self,amount):
+        if self.authonticate():
+            print(f'Processing Credit Card Payment of : {amount}')
+            payment_successful = True
+            if payment_successful:
+                print('Processing Payment Successfully!')
+                return True
+            else:
+                print('Payment Failed..')
+                return False
+        else:
+            return False
