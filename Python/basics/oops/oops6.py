@@ -45,3 +45,19 @@ class CreditCard(PaymentMethod):
         self.card_holder = card_holder
         self.cvv = cvv
         self.expiry_date = expiry_date
+
+    def authonticate(self):
+        if len(self.card_number) == 16 and self.cvv.isdigit() and len(self.cvv) == 3:
+            print('Authenticating Credit Card Number: {self.card_number}')
+            from datetime import datetime
+            current_year = datetime.now().year % 100
+            current_month = datetime.now.month
+            exp_year,exp_month = map(int,self.expiry_date.split('/'))
+            if (exp_year > current_year) or (exp_year == current_year and exp_month >= current_month):
+                return True
+            else:
+                print('Sorry, Your Credit Card is Expired..')
+                return False
+        else:
+            print('Invalid Credit Card Details..!')
+            return False
