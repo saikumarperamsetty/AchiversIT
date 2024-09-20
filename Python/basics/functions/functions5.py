@@ -67,9 +67,19 @@
 
 
 # Ex:6 Sum of list elements in Python using Recusion?
-def sum_of_elements_list(lst):
-    if not lst:
-        return 0
+# def sum_of_elements_list(lst):
+#     if not lst:
+#         return 0
+#     else:
+#         return lst[0] + sum_of_elements_list(lst[1:])
+# print(sum_of_elements_list((1,2,3,4,5,6,7,8,9,10)))     #output = 55
+
+
+# Ex:7 Reverse a String in Python using Recusion?
+def reverse_string(s):
+    if len(s) == 0:
+        return s
     else:
-        return lst[0] + sum_of_elements_list(lst[1:])
-print(sum_of_elements_list((1,2,3,4,5,6,7,8,9,10)))     #output = 55
+        return reverse_string(s[1:]) + s[0]
+print(reverse_string('Python'))     #output = onhtyp
+print(reverse_string('Sai Kumar'))  #output = ramuK iaS
