@@ -204,31 +204,62 @@
 
 # 9. Decorator for Type Checking:
 # Create a decorator that checks the types of the arguments passed to a function. If the types don’t match the expected ones, raise a TypeError. Test it on a function that adds two integers?
-from functools import wraps
-def type_check_decorator(*expected_types):
-    def decorator(func):
-        @wraps(func)
-        def wrapper(*args,**kwargs):
-            if len(args) != len(expected_types):
-                raise TypeError(f'Expected {len(expected_types)} arguments, got {len(args)}')
-            for arg,expected in zip(args,expected_types):
-                if not isinstance(arg,expected):
-                    raise TypeError(f'Expected argument of type{expected.__name__}, got {type(arg).__name__}')
-            return func(*args,**kwargs)
-        return wrapper
-    return decorator
+# from functools import wraps
+# def type_check_decorator(*expected_types):
+#     def decorator(func):
+#         @wraps(func)
+#         def wrapper(*args,**kwargs):
+#             if len(args) != len(expected_types):
+#                 raise TypeError(f'Expected {len(expected_types)} arguments, got {len(args)}')
+#             for arg,expected in zip(args,expected_types):
+#                 if not isinstance(arg,expected):
+#                     raise TypeError(f'Expected argument of type{expected.__name__}, got {type(arg).__name__}')
+#             return func(*args,**kwargs)
+#         return wrapper
+#     return decorator
 
-@type_check_decorator(int,int)
-def add(a,b):
-    return a+ b
+# @type_check_decorator(int,int)
+# def add(a,b):
+#     return a+ b
+
+# # Testing the function
+# if __name__ == '__main__':
+#     try:
+#         result = add(20,8)  # Valid input
+#         print(f'Result: {result}')
+
+#         result = add(20,'sai')  # Invalid input
+#         print(f'Result: {result}')
+#     except TypeError as e:
+#         print(e)
+
+
+# 10. Decorator for Flattening Nested Lists: 
+# Write a decorator that flattens nested lists passed to a function. Apply it to a function that sums all the numbers in a list, including nested ones?
+from functools import wraps
+def flatten_list(func):
+    @wraps(func)
+    def wrapper(nested_list):
+        def flatten(nested):
+            result = []
+            for item in nested:
+                if isinstance(item,list):
+                    result.extend(flatten(item))
+                else:
+                    result.append(item)
+                return result
+            
+        flat_list = flatten_list(nested_list)
+        return func(flat_list)
+    
+    return wrapper
+
+@flatten_list
+def sum_numbers(numbers):
+    return sum(numbers)
 
 # Testing the function
 if __name__ == '__main__':
-    try:
-        result = add(20,8)  # Valid input
-        print(f'Result: {result}')
-
-        result = add(20,'sai')  # Invalid input
-        print(f'Result: {result}')
-    except TypeError as e:
-        print(e)
+    nested_list = [1, [2, 3], [4, [5, 6]], 7]
+    result = sum_numbers(nested_list)
+    print(f"Sum of all numbers: {result}")  # Should output 28
