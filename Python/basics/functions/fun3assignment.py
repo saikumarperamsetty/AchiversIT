@@ -137,31 +137,66 @@
 
 # 7. Context Management with Decorators: 
 #  Write a decorator that acts as a context manager, ensuring that a resource (e.g., a file) is opened before the function runs and closed afterward. Use it to read and print the contents of a file?
-import os
-from functools import wraps
+# import os
+# from functools import wraps
 
-def file_context_manager(file_path):
+# def file_context_manager(file_path):
+#     def decorator(func):
+#         @wraps(func)
+#         def wrapper(*args, **kwargs):
+#             # Ensure the file exists
+#             if not os.path.exists(file_path):
+#                 raise FileNotFoundError(f"The file {file_path} does not exist.")
+
+#             # Open the file and pass the file object to the decorated function
+#             with open(file_path, 'r') as file:
+#                 return func(file, *args, **kwargs)
+#         return wrapper
+#     return decorator
+
+
+# @file_context_manager('example.txt')
+# def read_and_print_file(file):
+#     contents = file.read()
+#     print(contents)
+
+# # Call the function to read and print the file contents
+# try:
+#     read_and_print_file()
+# except FileNotFoundError as e:
+#     print(e)
+
+
+# 8. Retry Decorator:
+# Write a decorator that retries a function up to 3 times if it raises an exception. Test it on a function that raises an exception with a probability of 50%?
+import random
+import time
+from functools import wraps
+def retry_decorator(max_retries=3):
     def decorator(func):
         @wraps(func)
-        def wrapper(*args, **kwargs):
-            # Ensure the file exists
-            if not os.path.exists(file_path):
-                raise FileNotFoundError(f"The file {file_path} does not exist.")
-
-            # Open the file and pass the file object to the decorated function
-            with open(file_path, 'r') as file:
-                return func(file, *args, **kwargs)
+        def wrapper(*args,**kwargs):
+            for attempt in range(max_retries):
+                try:
+                    return func(*args,**kwargs)
+                except Exception as e:
+                        if attempt < max_retries-1:
+                            print(f'Attempt:{attempt +1} failed: {e}. Retring..')
+                            time.sleep(1)
+                        else:
+                            print(f'Attempt: {attempt +1} failed: {e}. No more Retries..')
+                        raise
         return wrapper
     return decorator
+@retry_decorator(max_retries=3)
+def unreliable_function():
+    if random.random < 0.5:
+        raise ValueError('Simulated failure')
+    return 'Success..!'
 
-
-@file_context_manager('example.txt')
-def read_and_print_file(file):
-    contents = file.read()
-    print(contents)
-
-# Call the function to read and print the file contents
-try:
-    read_and_print_file()
-except FileNotFoundError as e:
-    print(e)
+if __name__ == '__main__':
+    try:
+        result = unreliable_function()
+        print(result)
+    except Exception as e:
+        print(f'function failed after Retries: {e}')
