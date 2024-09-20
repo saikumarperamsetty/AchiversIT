@@ -22,12 +22,21 @@
 # 3. Tail recursion
 
 # 2. Basic Example of Indirect recursion in Python?
-def func1(n):
-    if n > 0:
-        print(n)
-        func2(n-1)
-def func2(n):
-    if n > 1:
-        print(n)
-        func1(n // 2)
-func1(10)
+# def func1(n):
+#     if n > 0:
+#         print(n)
+#         func2(n-1)
+# def func2(n):
+#     if n > 1:
+#         print(n)
+#         func1(n // 2)
+# func1(10) #output = 10 9 4 3 1
+
+# 2. Basic Example of tail recursion in Python?
+def tail_recursion_factorial(n,accumalator=1):
+    if n == 0:
+        return accumalator
+    else:
+      return  tail_recursion_factorial(n-1,n*accumalator)
+result = tail_recursion_factorial(5)
+print(result)   #output = 120
