@@ -169,34 +169,66 @@
 
 # 8. Retry Decorator:
 # Write a decorator that retries a function up to 3 times if it raises an exception. Test it on a function that raises an exception with a probability of 50%?
-import random
-import time
+# import random
+# import time
+# from functools import wraps
+# def retry_decorator(max_retries=3):
+#     def decorator(func):
+#         @wraps(func)
+#         def wrapper(*args,**kwargs):
+#             for attempt in range(max_retries):
+#                 try:
+#                     return func(*args,**kwargs)
+#                 except Exception as e:
+#                         if attempt < max_retries-1:
+#                             print(f'Attempt:{attempt +1} failed: {e}. Retring..')
+#                             time.sleep(1)
+#                         else:
+#                             print(f'Attempt: {attempt +1} failed: {e}. No more Retries..')
+#                         raise
+#         return wrapper
+#     return decorator
+
+# @retry_decorator(max_retries=3)
+# def unreliable_function():
+#     if random.random < 0.5:
+#         raise ValueError('Simulated failure')
+#     return 'Success..!'
+
+# if __name__ == '__main__':
+#     try:
+#         result = unreliable_function()
+#         print(result)
+#     except Exception as e:
+#         print(f'function failed after Retries: {e}')
+
+# 9. Decorator for Type Checking:
+# Create a decorator that checks the types of the arguments passed to a function. If the types don’t match the expected ones, raise a TypeError. Test it on a function that adds two integers?
 from functools import wraps
-def retry_decorator(max_retries=3):
+def type_check_decorator(*expected_types):
     def decorator(func):
         @wraps(func)
         def wrapper(*args,**kwargs):
-            for attempt in range(max_retries):
-                try:
-                    return func(*args,**kwargs)
-                except Exception as e:
-                        if attempt < max_retries-1:
-                            print(f'Attempt:{attempt +1} failed: {e}. Retring..')
-                            time.sleep(1)
-                        else:
-                            print(f'Attempt: {attempt +1} failed: {e}. No more Retries..')
-                        raise
+            if len(args) != len(expected_types):
+                raise TypeError(f'Expected {len(expected_types)} arguments, got {len(args)}')
+            for arg,expected in zip(args,expected_types):
+                if not isinstance(arg,expected):
+                    raise TypeError(f'Expected argument of type{expected.__name__}, got {type(arg).__name__}')
+            return func(*args,**kwargs)
         return wrapper
     return decorator
-@retry_decorator(max_retries=3)
-def unreliable_function():
-    if random.random < 0.5:
-        raise ValueError('Simulated failure')
-    return 'Success..!'
 
+@type_check_decorator(int,int)
+def add(a,b):
+    return a+ b
+
+# Testing the function
 if __name__ == '__main__':
     try:
-        result = unreliable_function()
-        print(result)
-    except Exception as e:
-        print(f'function failed after Retries: {e}')
+        result = add(20,8)  # Valid input
+        print(f'Result: {result}')
+
+        result = add(20,'sai')  # Invalid input
+        print(f'Result: {result}')
+    except TypeError as e:
+        print(e)
