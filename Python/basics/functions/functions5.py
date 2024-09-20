@@ -45,10 +45,22 @@
 
 
 # Ex:4 Basic Example of Iterative Approach in Python?
-def iterative_factorial(n):
-    result = 1
-    for i in range(1, n+1):
-        result *= i
-    return result
-res = iterative_factorial(5)
-print(res)  #output = 120
+# def iterative_factorial(n):
+#     result = 1
+#     for i in range(1, n+1):
+#         result *= i
+#     return result
+# res = iterative_factorial(5)
+# print(res)  #output = 120
+
+
+# Memoization
+# Ex:5 Basic Example of Memoization in Python?
+def fibonacci(n,memo={}):
+    if n in memo:
+        return memo[n]
+    if n <= 1:
+        return n
+    memo[n] = fibonacci(n-1,memo) + fibonacci(n-2,memo)
+    return memo[n]
+print(fibonacci(10))    #output = 55
