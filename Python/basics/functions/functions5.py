@@ -56,11 +56,20 @@
 
 # Memoization
 # Ex:5 Basic Example of Memoization in Python?
-def fibonacci(n,memo={}):
-    if n in memo:
-        return memo[n]
-    if n <= 1:
-        return n
-    memo[n] = fibonacci(n-1,memo) + fibonacci(n-2,memo)
-    return memo[n]
-print(fibonacci(10))    #output = 55
+# def fibonacci(n,memo={}):
+#     if n in memo:
+#         return memo[n]
+#     if n <= 1:
+#         return n
+#     memo[n] = fibonacci(n-1,memo) + fibonacci(n-2,memo)
+#     return memo[n]
+# print(fibonacci(10))    #output = 55
+
+
+# Ex:6 Sum of list elements in Python using Recusion?
+def sum_of_elements_list(lst):
+    if not lst:
+        return 0
+    else:
+        return lst[0] + sum_of_elements_list(lst[1:])
+print(sum_of_elements_list((1,2,3,4,5,6,7,8,9,10)))     #output = 55
