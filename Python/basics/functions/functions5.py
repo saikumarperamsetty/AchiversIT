@@ -76,10 +76,23 @@
 
 
 # Ex:7 Reverse a String in Python using Recusion?
-def reverse_string(s):
-    if len(s) == 0:
-        return s
+# def reverse_string(s):
+#     if len(s) == 0:
+#         return s
+#     else:
+#         return reverse_string(s[1:]) + s[0]
+# print(reverse_string('Python'))     #output = onhtyp
+# print(reverse_string('Sai Kumar'))  #output = ramuK iaS
+
+
+# Ex:8 Given String is Palindrome or Not, in Python using Recusion?
+def palindrome_string(s):
+    if len(s) <= 1:
+        return True
+    if s[0] == s[-1]:
+        return palindrome_string(s[1:-1])
     else:
-        return reverse_string(s[1:]) + s[0]
-print(reverse_string('Python'))     #output = onhtyp
-print(reverse_string('Sai Kumar'))  #output = ramuK iaS
+        return False
+print(palindrome_string('Python'))  #output = False
+print(palindrome_string('madam'))   #output = True
+print(palindrome_string('amanaplanacanalpanama'))   #output = True
