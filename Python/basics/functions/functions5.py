@@ -86,13 +86,23 @@
 
 
 # Ex:8 Given String is Palindrome or Not, in Python using Recusion?
-def palindrome_string(s):
-    if len(s) <= 1:
-        return True
-    if s[0] == s[-1]:
-        return palindrome_string(s[1:-1])
+# def palindrome_string(s):
+#     if len(s) <= 1:
+#         return True
+#     if s[0] == s[-1]:
+#         return palindrome_string(s[1:-1])
+#     else:
+#         return False
+# print(palindrome_string('Python'))  #output = False
+# print(palindrome_string('madam'))   #output = True
+# print(palindrome_string('amanaplanacanalpanama'))   #output = True
+
+
+# Ex:9 How to find Greatest Common Deviser(GCD) in Python using Recusion?
+def gcd(a,b):
+    if b == 0:
+        return a
     else:
-        return False
-print(palindrome_string('Python'))  #output = False
-print(palindrome_string('madam'))   #output = True
-print(palindrome_string('amanaplanacanalpanama'))   #output = True
+        return gcd(b,a%b)
+print(gcd(28,48))   #output = 4
+print(gcd(20,0))   #output = 20
