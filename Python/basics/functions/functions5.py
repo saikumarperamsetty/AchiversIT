@@ -99,10 +99,22 @@
 
 
 # Ex:9 How to find Greatest Common Deviser(GCD) in Python using Recusion?
-def gcd(a,b):
-    if b == 0:
-        return a
-    else:
-        return gcd(b,a%b)
-print(gcd(28,48))   #output = 4
-print(gcd(20,0))   #output = 20
+# def gcd(a,b):
+#     if b == 0:
+#         return a
+#     else:
+#         return gcd(b,a%b)
+# print(gcd(28,48))   #output = 4
+# print(gcd(20,0))   #output = 20
+
+
+# Ex:10 How to find Flatten a List in Python using Recusion?
+def flatten(lst):
+    flat_list = []
+    for item in lst:
+        if isinstance(item,list):
+            flat_list.extend(flatten(item))
+        else:
+            flat_list.append(item)
+    return flat_list
+print(flatten([1,[2,[3,4],5],6]))     #output = [1, 2, 3, 4, 5, 6]
