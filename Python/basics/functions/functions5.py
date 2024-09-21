@@ -109,12 +109,29 @@
 
 
 # Ex:10 How to find Flatten a List in Python using Recusion?
-def flatten(lst):
-    flat_list = []
-    for item in lst:
-        if isinstance(item,list):
-            flat_list.extend(flatten(item))
-        else:
-            flat_list.append(item)
-    return flat_list
-print(flatten([1,[2,[3,4],5],6]))     #output = [1, 2, 3, 4, 5, 6]
+# def flatten(lst):
+#     flat_list = []
+#     for item in lst:
+#         if isinstance(item,list):
+#             flat_list.extend(flatten(item))
+#         else:
+#             flat_list.append(item)
+#     return flat_list
+# print(flatten([1,[2,[3,4],5],6]))     #output = [1, 2, 3, 4, 5, 6]
+
+
+# Ex:11 How to find isPrime Number or Not, in Python using Recusion?
+import math
+def isprime_or_not(n):
+    if n <= 0:
+        return False
+    if n == 2:
+        return True
+    if n % 2 == 0:
+        return False
+    for i in range(3, math.isqrt(n)+1,2):
+        if n % i == 0:
+            return False
+    return True
+result = isprime_or_not(11)
+print(result)               #output = True
