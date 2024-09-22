@@ -15,12 +15,21 @@
 
 
 # Ex:2 if else elif
-temp = 4
-if temp >= 28:
-    print("It's, Hot Outside")
-elif temp >= 12:
-    print("It's, Cool Outside")
-elif temp >= 5:
-    print("It's, Freezing Cold Outside")
+# temp = 4
+# if temp >= 28:
+#     print("It's, Hot Outside")
+# elif temp >= 12:
+#     print("It's, Cool Outside")
+# elif temp >= 5:
+#     print("It's, Freezing Cold Outside")
+# else:
+#     print("Don't go Outside..?")
+
+
+# Ex:3 if else --> specially for name matches
+name = input('Enter Your Name: ')
+if name == 'SAI KUMAR':
+    print('Hi',name,'Good Evening')
+    print('Have a Great Day ahead..')
 else:
-    print("Don't go Outside..?")
+    print('Hello Guest, Good night..')
