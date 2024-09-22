@@ -60,6 +60,13 @@
 
 
 # Ex:2  How to iterate over a list by using for loop in Python?
-list1 = (13,25,69,75,18,77,8) 
-for l in list1:
-    print(l)
+# list1 = (13,25,69,75,18,77,8)
+# for l in list1:
+#     print(l)
+
+# Ex:3 How to iterate over a tuple and Find the Sum value by using for loop in Python?
+l = [10,20,30,40,50]
+sum = 0
+for i in l:
+    sum = sum+i
+    print('The Sum: ',sum)
