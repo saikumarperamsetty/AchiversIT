@@ -29,14 +29,20 @@
 
 
 # Ex:4   How to take input from user for the Employee info?
-eno = int(input('Enter your Eno: '))
-ename = input('Enter your Name: ')
-esalary = int(input('Enter your Esalary: '))
-eaddr = input('Enter your Address: ')
-married = input('Married[True/False]: ').strip().lower() == 'true'
-print('please confirm Employee details.?')
-print('Emp No:',eno)
-print('Emp Name:',ename)
-print('Emp Salary:',esalary)
-print('Emp Address:',eaddr)
-print('Emp Married:',married)
+# eno = int(input('Enter your Eno: '))
+# ename = input('Enter your Name: ')
+# esalary = int(input('Enter your Esalary: '))
+# eaddr = input('Enter your Address: ')
+# married = input('Married[True/False]: ').strip().lower() == 'true'
+# print('please confirm Employee details.?')
+# print('Emp No:',eno)
+# print('Emp Name:',ename)
+# print('Emp Salary:',esalary)
+# print('Emp Address:',eaddr)
+# print('Emp Married:',married)
+
+
+# Ex:5   How to take Two input numbers in same line from input?
+i,j = map(int,input('Enter Two Numbers:').split())
+product = i * j # 10 20
+print(product)      # output = 200
