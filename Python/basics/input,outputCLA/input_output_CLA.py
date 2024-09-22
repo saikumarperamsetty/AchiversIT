@@ -49,16 +49,30 @@
 
 
 # Ex:6   How to use eval() method with the help from input?
-eval1 = eval('10+20+30+40')        # output = 100
-eval2 = eval('10.6+20.4+30.2')      # output = 61.2
-eval3 = eval('99+28+30+True')  #here True=1(within the String)     # output = 157+(True) ==> 158
-# eval4 = eval('10+20+30+SAI')      # output = NameError: name 'SAI' is not defined
-print(eval1)
-print(eval2)
-print(eval3)
-# print(eval4)
+# eval1 = eval('10+20+30+40')        # output = 100
+# eval2 = eval('10.6+20.4+30.2')      # output = 61.2
+# eval3 = eval('99+28+30+True')  #here True=1(within the String)     # output = 157+(True) ==> 158
+# # eval4 = eval('10+20+30+SAI')      # output = NameError: name 'SAI' is not defined
+# print(eval1)
+# print(eval2)
+# print(eval3)
+# # print(eval4)
 
-list1 = eval(input('Enter Some List Values: '))
-print(list1)
-print(type (list1))
-print(sum(list1))
+# list1 = eval(input('Enter Some List Values: '))
+# print(list1)
+# print(type (list1))
+# print(sum(list1))
+
+
+# Ex:7  How to use print() method in different ways in PYTHON?
+print('SaiKumar')   # output = SaiKumar
+print('Sai\tKumar') # output = Sai  Kumar (\t = its giving tab space=)
+print('Sai\nKumar') # output = Sai  \nKumar (\n = its coming in new line)
+
+# repetion_operator: (*) means one value should be String and value Should be Int 
+print('SAI KUMAR'*3)    # output = SAI KUMARSAI KUMARSAI KUMAR (it will print 3times)
+
+# concatination_operator: (+) it will add Two Strings 
+print('SAI'+'KUMAR')    # output = SAIKUMAR
+
+print('SAI KUMAR'+10)    # output = it will Give TYPE ERROR --> TypeError: can only concatenate str (not "int") to str
