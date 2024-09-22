@@ -36,12 +36,24 @@
 
 
 # Ex:4 How to Find Biggest Number by using if,else and elif?
-num1 = input('Enter num1: ')
-num2 = input('Enter num2: ')
-num3 = input('Enter num3: ')
-if num1 > num2 and num1 > num3:
-    print('num1 is the Biggest')
-elif num2 > num3:
-    print('num2 is the Biggest')
-else:
-    print('num3 is the Biggest')
+# num1 = input('Enter num1: ')
+# num2 = input('Enter num2: ')
+# num3 = input('Enter num3: ')
+# if num1 > num2 and num1 > num3:
+#     print('num1 is the Biggest')
+# elif num2 > num3:
+#     print('num2 is the Biggest')
+# else:
+#     print('num3 is the Biggest')
+
+
+# Loop or Iterative Statements:
+# for : It can be used to iterate over the Sequence, and execute some action.
+# while : It will execute as long as the Condition is true.
+
+# for loop Examples:
+# Ex:1  How to iterate over a String?
+str = 'SAI KUMAR'
+for char in str:
+    print(char)     # output = vertical output
+    print(char,end=' ') # output = Horizontal output --> S A I   K U M A R
