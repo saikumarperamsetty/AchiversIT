@@ -65,8 +65,18 @@
 #     print(l)
 
 # Ex:3 How to iterate over a tuple and Find the Sum value by using for loop in Python?
-l = [10,20,30,40,50]
-sum = 0
-for i in l:
-    sum = sum+i
-    print('The Sum: ',sum)
+# l = [10,20,30,40,50]
+# sum = 0
+# for i in l:
+#     sum = sum+i
+#     print('The Sum: ',sum)
+
+
+# Ex:4 How to print Even and Odd numbers by using for loop in Python?
+# For Odd Numbers:
+for j in range(1,11,2):
+    print(j)
+
+# For Even Numbers:
+for j in range(10,0,-2):
+    print(j)
