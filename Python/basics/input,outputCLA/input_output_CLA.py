@@ -43,6 +43,22 @@
 
 
 # Ex:5   How to take Two input numbers in same line from input?
-i,j = map(int,input('Enter Two Numbers:').split())
-product = i * j # 10 20
-print(product)      # output = 200
+# i,j = map(int,input('Enter Two Numbers:').split())
+# product = i * j # 10 20
+# print(product)      # output = 200
+
+
+# Ex:6   How to use eval() method with the help from input?
+eval1 = eval('10+20+30+40')        # output = 100
+eval2 = eval('10.6+20.4+30.2')      # output = 61.2
+eval3 = eval('99+28+30+True')  #here True=1(within the String)     # output = 157+(True) ==> 158
+# eval4 = eval('10+20+30+SAI')      # output = NameError: name 'SAI' is not defined
+print(eval1)
+print(eval2)
+print(eval3)
+# print(eval4)
+
+list1 = eval(input('Enter Some List Values: '))
+print(list1)
+print(type (list1))
+print(sum(list1))
