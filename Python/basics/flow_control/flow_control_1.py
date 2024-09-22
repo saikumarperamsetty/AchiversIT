@@ -91,10 +91,17 @@
 
 
 # Ex:2  How to print the Sum of n numbers by using while loop in Python?
-n = int(input('Enter a number to find the total:'))
-sum = 0
-x = 1
-while x < n:
-    sum = sum+x
-    x += 1
-print("The Sum of first",n,'numbers is = ',sum)
+# n = int(input('Enter a number to find the total:'))
+# sum = 0
+# x = 1
+# while x < n:
+#     sum = sum+x
+#     x += 1
+# print("The Sum of first",n,'numbers is = ',sum)
+
+
+# Ex:3  How to create infinite loop by using while loop in Python?
+name = ""
+while name != 'sai kumar':
+    name = input('Enter Matching Name: ')
+print('Thanks for giving the Matching Name..!')
