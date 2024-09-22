@@ -52,8 +52,14 @@
 # while : It will execute as long as the Condition is true.
 
 # for loop Examples:
-# Ex:1  How to iterate over a String?
-str = 'SAI KUMAR'
-for char in str:
-    print(char)     # output = vertical output
-    print(char,end=' ') # output = Horizontal output --> S A I   K U M A R
+# Ex:1  How to iterate over a String by using for loop in Python?
+# str = 'SAI KUMAR'
+# for char in str:
+#     print(char)     # output = vertical output
+#     print(char,end=' ') # output = Horizontal output --> S A I   K U M A R
+
+
+# Ex:2  How to iterate over a list by using for loop in Python?
+list1 = (13,25,69,75,18,77,8) 
+for l in list1:
+    print(l)
