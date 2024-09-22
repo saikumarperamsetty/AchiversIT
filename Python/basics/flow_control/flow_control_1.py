@@ -73,10 +73,18 @@
 
 
 # Ex:4 How to print Even and Odd numbers by using for loop in Python?
-# For Odd Numbers:
-for j in range(1,11,2):
-    print(j)
+# # For Odd Numbers:
+# for j in range(1,11,2):
+#     print(j)
 
 # For Even Numbers:
-for j in range(10,0,-2):
-    print(j)
+# for j in range(10,0,-2):
+#     print(j)
+
+
+# while loop Examples:
+# Ex:1  How to print first 10 numbers by using while loop in Python?
+x = 0
+while x <=9:
+    x += 1
+    print(x)
