@@ -84,7 +84,17 @@
 
 # while loop Examples:
 # Ex:1  How to print first 10 numbers by using while loop in Python?
-x = 0
-while x <=9:
+# x = 0
+# while x <=9:
+#     x += 1
+#     print(x)
+
+
+# Ex:2  How to print the Sum of n numbers by using while loop in Python?
+n = int(input('Enter a number to find the total:'))
+sum = 0
+x = 1
+while x < n:
+    sum = sum+x
     x += 1
-    print(x)
+print("The Sum of first",n,'numbers is = ',sum)
