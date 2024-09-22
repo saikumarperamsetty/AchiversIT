@@ -27,9 +27,21 @@
 
 
 # Ex:3 if else --> specially for name matches
-name = input('Enter Your Name: ')
-if name == 'SAI KUMAR':
-    print('Hi',name,'Good Evening')
-    print('Have a Great Day ahead..')
+# name = input('Enter Your Name: ')
+# if name == 'SAI KUMAR':
+#     print('Hi',name,'Good Evening')
+#     print('Have a Great Day ahead..')
+# else:
+#     print('Hello Guest, Good night..')
+
+
+# Ex:4 How to Find Biggest Number by using if,else and elif?
+num1 = input('Enter num1: ')
+num2 = input('Enter num2: ')
+num3 = input('Enter num3: ')
+if num1 > num2 and num1 > num3:
+    print('num1 is the Biggest')
+elif num2 > num3:
+    print('num2 is the Biggest')
 else:
-    print('Hello Guest, Good night..')
+    print('num3 is the Biggest')
