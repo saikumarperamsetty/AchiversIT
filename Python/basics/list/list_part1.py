@@ -63,24 +63,41 @@
 
 
 # Ex:8 How to use Traversing in list?
-l = [10,22,35,48,55,28,21,11,92,25,67]
+# l = [10,22,35,48,55,28,21,11,92,25,67]
 
-# printing values by using for loop
-for i in l:
-    print(i)
+# # printing values by using for loop
+# for i in l:
+#     print(i)
 
-# printing values by using while loop
-i = 0
-while i < len(l):
-    print(l[i])
-    i += 1
+# # printing values by using while loop
+# i = 0
+# while i < len(l):
+#     print(l[i])
+#     i += 1
 
-# # for Even numbers
-for i in l:
-    if i % 2 == 0:
-        print(i)
+# # # for Even numbers
+# for i in l:
+#     if i % 2 == 0:
+#         print(i)
 
-# # for odd numbers
-for i in l:
-    if i % 2 != 0:
-        print(i)
+# # # for odd numbers
+# for i in l:
+#     if i % 2 != 0:
+#         print(i)
+
+
+# Ex:9 How apply len() method in list?
+l = [28,98,41,84,32,19,24,52,47,23]
+print(len(l))     # output = 10
+
+# Ex:10 How apply count() method in list?
+l = [28,98,41,84,32,19,28,52,47,28]
+print(l.count(28))    # output = 3
+
+# Ex:11 How apply index() method in list?
+l = [28,98,41,84,32,19,24,52,47,23]
+print(l.index(19))      # output = 5
+
+# Ex:12 How apply pop() method in list?
+l = [28,98,41,84,32,19,24,52,47,23]
+print(l.pop())      # output = 23
