@@ -68,13 +68,22 @@
 
 # Ex:7 How to print Even & Odd Numbers by using continue statement in Python?
 # for Even Numbers:
-for i in range(1,11):
-    if i % 2 != 0:
-        continue
-    print(i)
+# for i in range(1,11):
+#     if i % 2 != 0:
+#         continue
+#     print(i)
 
-# for Odd Numbers:
-for j in range(1,11):
-    if j % 2 == 0:
+# # for Odd Numbers:
+# for j in range(1,11):
+#     if j % 2 == 0:
+#         continue
+#     print(j)
+
+
+# Ex:8 How to print list values along with division by 100 by using continue statement in Python?
+list = (10,20,0,50,40)
+for i in list:
+    if i == 0:
+        print('How can you devide by Zero, I just Skipping this operation')
         continue
-    print(j)
+    print('100/{} = {}'.format(i,100/i))
