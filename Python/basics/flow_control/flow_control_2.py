@@ -93,11 +93,30 @@
 # loops with else block:
 # --> inside the loop execution, if the break statement is not executed,, then the else block will be executed.
 # --> else means a loop without any break.
-cart = [10,20,30,40,50]
-for item in cart:
-    if item >= 40:
-        print('we cannot process this order..')
-        break
-    print(item)
-else:
-    print('Congrats.. All items processed Successfully...')
+# cart = [10,20,30,40,50]
+# for item in cart:
+#     if item >= 40:
+#         print('we cannot process this order..')
+#         break
+#     print(item)
+# else:
+#     print('Congrats.. All items processed Successfully...')
+
+
+
+# pass Statement:
+# --> empty statement
+# --> null statement
+# --> It will not do anything
+
+# Ex:1 How to use pass statement in if block in Python?
+if True:
+            # without pass it's Giving Error
+    pass    #  not giving any error 
+
+
+# Ex:2 How to use pass statement in function in Python?
+def function():
+            # without pass it's Giving Error
+    pass    #  not giving any error 
+function()
