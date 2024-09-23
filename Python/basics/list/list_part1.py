@@ -104,53 +104,88 @@
 # print(l.pop())      # output = 23
 
 # Ex:13 How apply append() method in list?
-l = [10,20,30,40,50]
-l.append(60)
-l.append(70)
-l.append(80)
-l.append(90)
-l.append(100)     # add element end of the list
-print(l)        # output = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+# l = [10,20,30,40,50]
+# l.append(60)
+# l.append(70)
+# l.append(80)
+# l.append(90)
+# l.append(100)     # add element end of the list
+# print(l)        # output = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
-# Ex:14 How apply extend() method in list?
-l = [10,20,30,40,50]
-l2 = [600,700,800,900,1000]
-l.extend(l2)                  # it is extended elements for existing list
-print(l)       # output = [10, 20, 30, 40, 50, 600, 700, 800, 900, 1000]
+# # Ex:14 How apply extend() method in list?
+# l = [10,20,30,40,50]
+# l2 = [600,700,800,900,1000]
+# l.extend(l2)                  # it is extended elements for existing list
+# print(l)       # output = [10, 20, 30, 40, 50, 600, 700, 800, 900, 1000]
 
-# Ex:15 How apply insert() method in list?
-l = [10,20,30,40,50]
-l.insert(2,80)
-l.insert(4,90)        # it is inserting between the elements
-print(l)       # output = [10, 20, 80, 30, 90, 40, 50]
+# # Ex:15 How apply insert() method in list?
+# l = [10,20,30,40,50]
+# l.insert(2,80)
+# l.insert(4,90)        # it is inserting between the elements
+# print(l)       # output = [10, 20, 80, 30, 90, 40, 50]
 
-# Ex:16 How apply remove() method in list?
-l = [10,20,30,40,50]
-l.remove(40)
-l.remove(10)      # it is removed that particular elements
-print(l)       # output = [20, 30, 50]
+# # Ex:16 How apply remove() method in list?
+# l = [10,20,30,40,50]
+# l.remove(40)
+# l.remove(10)      # it is removed that particular elements
+# print(l)       # output = [20, 30, 50]
 
-# Ex:17 How apply clear() method in list?
-l = [10,20,30,40,50]
-l.clear()             # it is clear the total list
-print(l)       # output = []
+# # Ex:17 How apply clear() method in list?
+# l = [10,20,30,40,50]
+# l.clear()             # it is clear the total list
+# print(l)       # output = []
 
-# Ex:18 How apply reverse() method in list?
-l = [10,20,30,40,50]
-l.reverse()           # it just reverse the list elements
-print(l)          # output = [50, 40, 30, 20, 10]
+# # Ex:18 How apply reverse() method in list?
+# l = [10,20,30,40,50]
+# l.reverse()           # it just reverse the list elements
+# print(l)          # output = [50, 40, 30, 20, 10]
 
-# Ex:19 How apply sort() method with ascending order in list?
-l = [90,20,30,60,40]
-l.sort()                    # its applied for the Ascending Order
-print(l)                # output = [20, 30, 40, 60, 90]
+# # Ex:19 How apply sort() method with ascending order in list?
+# l = [90,20,30,60,40]
+# l.sort()                    # its applied for the Ascending Order
+# print(l)                # output = [20, 30, 40, 60, 90]
 
-# Ex:20 How apply sort() method with descending order in list?
-l = [90,20,30,60,40]
-l.sort(reverse=True)        # for that sort() method we applied reverse=True means Desending Order
-print(l)                # output = [90, 60, 40, 30, 20]
+# # Ex:20 How apply sort() method with descending order in list?
+# l = [90,20,30,60,40]
+# l.sort(reverse=True)        # for that sort() method we applied reverse=True means Desending Order
+# print(l)                # output = [90, 60, 40, 30, 20]
 
-# Ex:21 How apply sort() method with descending order in list?
-str = ['cherry','apple','orange','banana','grapes','dates']
-str.sort(reverse=True)
-print(str)                  # output = ['orange', 'grapes', 'dates', 'cherry', 'banana', 'apple']
+# # Ex:21 How apply sort() method with descending order in list?
+# str = ['cherry','apple','orange','banana','grapes','dates']
+# str.sort(reverse=True)
+# print(str)                  # output = ['orange', 'grapes', 'dates', 'cherry', 'banana', 'apple']
+
+
+# Alias and Copy in List:
+# How to use Alias in list?
+x = [10,20,30,40,50]
+y = x                   # we use Alias means it's effecting by both
+y[0] = 200
+print(x)
+print(y)
+
+# How to use copy() in list?
+y1 = x.copy()   # it is completly different object
+y1[0] = 300
+print(x)
+print(y1)
+
+
+# Mathematical Operations on List: + , *
+x = [10,20,30,40,50]
+y = [100,200,300,400,500]
+print(x + y)                # output = [10, 20, 30, 40, 50, 100, 200, 300, 400, 500]
+
+
+x = [10,20,30,40,50]
+y = [10,20,30,40,50]
+print(x > y)            # output = False
+print(x == y)           # output = True
+print(x is y)           # output = False
+
+
+x = ['a','b','c']
+y = ['A','B','C']
+print(x > y)            # output = True
+print(x == y)           # output = False
+print(x is y)           # output = False
