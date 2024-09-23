@@ -58,9 +58,23 @@
 
 
 # Ex:6 How to use continue statement in a list in Python?
-cart = [30000,60000,20000,50000,40000]
-for price in cart:
-    if price >= 50000:
-        print(price,'for thse Transactions You Need PAN CARD')
+# cart = [30000,60000,20000,50000,40000]
+# for price in cart:
+#     if price >= 50000:
+#         print(price,'for thse Transactions You Need PAN CARD')
+#         continue
+#     print(price)
+
+
+# Ex:7 How to print Even & Odd Numbers by using continue statement in Python?
+# for Even Numbers:
+for i in range(1,11):
+    if i % 2 != 0:
         continue
-    print(price)
+    print(i)
+
+# for Odd Numbers:
+for j in range(1,11):
+    if j % 2 == 0:
+        continue
+    print(j)
