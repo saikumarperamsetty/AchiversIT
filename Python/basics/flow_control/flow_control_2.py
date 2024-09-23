@@ -49,9 +49,18 @@
 # break: Used to terminate the loop and come out of the loop we can use this break statement.
 
 # Ex:5 How to use break statement in a list in Python?
-l = (20,10,40,30,50)
-for i in l:
-    if i == 40:
-        print(i,'element find here')
-        break
-    print(i)
+# l = (20,10,40,30,50)
+# for i in l:
+#     if i == 40:
+#         print(i,'element find here')
+#         break
+#     print(i)
+
+
+# Ex:6 How to use continue statement in a list in Python?
+cart = [30000,60000,20000,50000,40000]
+for price in cart:
+    if price >= 50000:
+        print(price,'for thse Transactions You Need PAN CARD')
+        continue
+    print(price)
