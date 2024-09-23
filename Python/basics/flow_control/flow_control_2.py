@@ -34,12 +34,24 @@
 
 
 # Ex:4 How to use Nested while Loops to print Triangle with number increasing pattern in Python?
-rows = 5
-i = 1
-while i <= rows:
-    j = 1
-    while j <= i:
-        print(j,end=' ')
-        j += 1
-    print()
-    i += 1
+# rows = 5
+# i = 1
+# while i <= rows:
+#     j = 1
+#     while j <= i:
+#         print(j,end=' ')
+#         j += 1
+#     print()
+#     i += 1
+
+
+# break and continue Statements
+# break: Used to terminate the loop and come out of the loop we can use this break statement.
+
+# Ex:5 How to use break statement in a list in Python?
+l = (20,10,40,30,50)
+for i in l:
+    if i == 40:
+        print(i,'element find here')
+        break
+    print(i)
