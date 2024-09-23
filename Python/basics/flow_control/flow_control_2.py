@@ -21,13 +21,25 @@
 
 # Ex:3 How to print Triangle by using Nested Loops?
 # Approach-1
-n = int(input('Enter Number to Print Triangle1:'))
-for i in range(1,n+1):
-    for j in range(1,i+1):
-        print('*',end=' ')
-    print()
+# n = int(input('Enter Number to Print Triangle1:'))
+# for i in range(1,n+1):
+#     for j in range(1,i+1):
+#         print('*',end=' ')
+#     print()
 
-# Approach-2
-t = int(input('Enter Number to Print Triangle2:'))
-for s in range(1,n+1):
-    print('# '*s)
+# # Approach-2
+# t = int(input('Enter Number to Print Triangle2:'))
+# for s in range(1,n+1):
+#     print('# '*s)
+
+
+# Ex:4 How to use Nested while Loops to print Triangle with number increasing pattern in Python?
+rows = 5
+i = 1
+while i <= rows:
+    j = 1
+    while j <= i:
+        print(j,end=' ')
+        j += 1
+    print()
+    i += 1
