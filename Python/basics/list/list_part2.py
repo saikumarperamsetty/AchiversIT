@@ -122,20 +122,28 @@
 # print(result)
 
 
-# List Comprehension
+# Ex:3 List Comprehension
 # it is the concise way to create list 
 # Syntax: list_c = [expresion iteration condition]
 
 # crate list using list comprehension
-mylist = [10,20,30,40,50]
-list_c = [x for x in mylist]
-print(list_c)
+# mylist = [10,20,30,40,50]
+# list_c = [x for x in mylist]
+# print(list_c)
 
 # list comprehension with square values and if block
-list_c = [x*x for x in mylist if x % 20 == 0]
-print(list_c)
+# list_c = [x*x for x in mylist if x % 20 == 0]
+# print(list_c)
 
 # list comprehension in Strings
-myliststr = ['Cocumber','Tomato','Onion','Carrot','Lemon']
-myliststr_c = [x[0].lower() for x in myliststr]
-print(myliststr_c)
+# myliststr = ['Cocumber','Tomato','Onion','Carrot','Lemon']
+# myliststr_c = [x[0].lower() for x in myliststr]
+# print(myliststr_c)
+
+# list comprehension for to find Unique and Common Elements in list?
+list1 = [10,90,20,180,50]
+list2 = [90,40,70,60,180]
+unique_elements_in_list = [x for x in list1 if x not in list2]
+common_elements_in_list = [x for x in list2 if x in list1]
+print('unique_elements_in_list:',unique_elements_in_list)
+print('common_elements_in_list:',common_elements_in_list)
