@@ -91,7 +91,7 @@
 #         flatten_list.append(j)
 # print(flatten_list)
 
-# # flatten list using list expression?
+# # flatten list using list comprehension?
 # flatlist = [y for x in l for y in x]
 # print(flatlist)
 
@@ -101,22 +101,41 @@
 # print(flatlistiter)
 
 # flatten list using numpy?
-import numpy as np
-nested_list = [[10,20],[30,40],[50,60]]
-flat_list_numpy = np.array(nested_list).flatten()
-result = flat_list_numpy.tolist()
-print(result)
+# import numpy as np
+# nested_list = [[10,20],[30,40],[50,60]]
+# flat_list_numpy = np.array(nested_list).flatten()
+# result = flat_list_numpy.tolist()
+# print(result)
 
 
 # How to flatten Multi depth nested list?
-nested_list = [1,[2,[3,[4,[5,6]]]],[7,[8,[9,[10]]]]]
-def flatten(nested_list):
-    flat_list = []
-    for item in nested_list:
-        if isinstance(item,list):
-            flat_list.extend(flatten(item))
-        else:
-            flat_list.append(item)
-    return flat_list
-result = flatten(nested_list)
-print(result)
+# nested_list = [1,[2,[3,[4,[5,6]]]],[7,[8,[9,[10]]]]]
+# def flatten(nested_list):
+#     flat_list = []
+#     for item in nested_list:
+#         if isinstance(item,list):
+#             flat_list.extend(flatten(item))
+#         else:
+#             flat_list.append(item)
+#     return flat_list
+# result = flatten(nested_list)
+# print(result)
+
+
+# List Comprehension
+# it is the concise way to create list 
+# Syntax: list_c = [expresion iteration condition]
+
+# crate list using list comprehension
+mylist = [10,20,30,40,50]
+list_c = [x for x in mylist]
+print(list_c)
+
+# list comprehension with square values and if block
+list_c = [x*x for x in mylist if x % 20 == 0]
+print(list_c)
+
+# list comprehension in Strings
+myliststr = ['Cocumber','Tomato','Onion','Carrot','Lemon']
+myliststr_c = [x[0].lower() for x in myliststr]
+print(myliststr_c)
