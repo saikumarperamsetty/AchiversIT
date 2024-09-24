@@ -141,9 +141,23 @@
 # print(myliststr_c)
 
 # list comprehension for to find Unique and Common Elements in list?
-list1 = [10,90,20,180,50]
-list2 = [90,40,70,60,180]
-unique_elements_in_list = [x for x in list1 if x not in list2]
-common_elements_in_list = [x for x in list2 if x in list1]
-print('unique_elements_in_list:',unique_elements_in_list)
-print('common_elements_in_list:',common_elements_in_list)
+# list1 = [10,90,20,180,50]
+# list2 = [90,40,70,60,180]
+# unique_elements_in_list = [x for x in list1 if x not in list2]
+# common_elements_in_list = [x for x in list2 if x in list1]
+# print('unique_elements_in_list:',unique_elements_in_list)
+# print('common_elements_in_list:',common_elements_in_list)
+
+
+# Shallow copy and Deep copy in list?
+import copy
+original_list = [1,2,[3,4],5]
+shallow_copy = copy.copy(original_list)
+deep_copy = copy.deepcopy(original_list)
+
+shallow_copy[0] = 100
+shallow_copy[2][1] = 400
+
+print('original_list:',original_list)
+print('shallow_copy:',shallow_copy)
+print('deep_copy:',deep_copy)
