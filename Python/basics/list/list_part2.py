@@ -20,15 +20,39 @@
 # l = [10,20,60,50,40]
 # print(sum(l))           # output = 180
 
+# any() and all()
+# any()
+l = [True,False,True]
+any_result = any(l)
+all_result = all(l)
+print(any_result)
+print(all_result)
+
+# unpacking(Destructering) in list and tuple
+# Destructering = Extracting the items and saving to variable is called 'Destructuring'
+# list
+l = [10,20,30]
+a,b,c = l
+print(a)
+print(b)
+print(c)
+
+# tuple
+t = (10,20,30)
+x,y,z = t
+print(x)
+print(y)
+print(z)
+
 
 # Ex:29 How to Find Even & Odd Numbers Sum on list in Python?
-l = [1,2,3,4,5,6,7,8,9]
-even_sum = 0
-odd_sum = 0
-for num in l:
-    if num % 2 == 0:
-        even_sum += num
-    else:
-        odd_sum += num
-print('Even Numbers Sum in Given List: ',even_sum)
-print('Odd Numbers Sum in Given List: ',odd_sum)
+# l = [1,2,3,4,5,6,7,8,9]
+# even_sum = 0
+# odd_sum = 0
+# for num in l:
+#     if num % 2 == 0:
+#         even_sum += num
+#     else:
+#         odd_sum += num
+# print('Even Numbers Sum in Given List:',even_sum)
+# print('Odd Numbers Sum in Given List:',odd_sum)
