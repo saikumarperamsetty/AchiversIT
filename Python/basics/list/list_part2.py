@@ -150,14 +150,53 @@
 
 
 # Shallow copy and Deep copy in list?
-import copy
-original_list = [1,2,[3,4],5]
-shallow_copy = copy.copy(original_list)
-deep_copy = copy.deepcopy(original_list)
+# import copy
+# original_list = [1,2,[3,4],5]
+# shallow_copy = copy.copy(original_list)
+# deep_copy = copy.deepcopy(original_list)
 
-shallow_copy[0] = 100
-shallow_copy[2][1] = 400
+# shallow_copy[0] = 100
+# shallow_copy[2][1] = 400
 
-print('original_list:',original_list)
-print('shallow_copy:',shallow_copy)
-print('deep_copy:',deep_copy)
+# print('original_list:',original_list)
+# print('shallow_copy:',shallow_copy)
+# print('deep_copy:',deep_copy)
+
+
+# Tuple Datatype:
+# It is same as list but immutable.
+
+# Ex:1 How to create tuple in Python?
+t = (10,20,30)
+print(t)
+print(type(t))
+
+# Ex:2 How to apply max() method in tuple?
+t = (10,20,30)
+print(max(t))
+
+# # Ex:3 How to apply min() method in tuple?
+t = (10,20,30)
+print(min(t))
+
+# Ex:4 How to apply sum() method in tuple?
+t = (10,20,30)
+print(sum(t))
+
+# Ex:5 How to reverse a tuple?
+t = (10,20,30,'SAI KUMAR',True,20+8j,28)
+print(tuple(reversed(t)))
+
+# Ex:6 How to apply index() a tuple?
+t = (10,20,30,50,40)
+print(t[3])
+
+# # Ex:7 How to apply slice() a tuple?
+t = (10,20,30,50,40)
+print(t[2:5])
+
+# Ex:7 How to apply sorted() a tuple?
+t = (90,20,180,50,40)
+asc = sorted(t)
+print('Ascending order:',asc)
+print('Descending order:',tuple(reversed(asc)))
