@@ -82,20 +82,41 @@
 
 
 # Ex:2 Different ways to flatten a Nested list?
-l = [[10,20],[30,40],[50,60]]
+# l = [[10,20],[30,40],[50,60]]
 
-# flatten list using for loop?
-flatten_list = []
-for i in l:
-    for j in i:
-        flatten_list.append(j)
-print(flatten_list)
+# # flatten list using for loop?
+# flatten_list = []
+# for i in l:
+#     for j in i:
+#         flatten_list.append(j)
+# print(flatten_list)
 
-# flatten list using complimentary expression?
-flatlist = [y for x in l for y in x]
-print(flatlist)
+# # flatten list using list expression?
+# flatlist = [y for x in l for y in x]
+# print(flatlist)
 
-# flatten list using itertools module?
-import itertools
-flatlistiter = list(itertools.chain.from_iterable(l))
-print(flatlistiter)
+# # flatten list using itertools module?
+# import itertools
+# flatlistiter = list(itertools.chain.from_iterable(l))
+# print(flatlistiter)
+
+# flatten list using numpy?
+import numpy as np
+nested_list = [[10,20],[30,40],[50,60]]
+flat_list_numpy = np.array(nested_list).flatten()
+result = flat_list_numpy.tolist()
+print(result)
+
+
+# How to flatten Multi depth nested list?
+nested_list = [1,[2,[3,[4,[5,6]]]],[7,[8,[9,[10]]]]]
+def flatten(nested_list):
+    flat_list = []
+    for item in nested_list:
+        if isinstance(item,list):
+            flat_list.extend(flatten(item))
+        else:
+            flat_list.append(item)
+    return flat_list
+result = flatten(nested_list)
+print(result)
