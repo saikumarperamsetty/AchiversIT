@@ -59,22 +59,43 @@
 
 
 # Nested Lists:
-l = [10,20,[30,40],50]
-# for accessing nested list values
-print(l[0])
-print(l[1])
-print(l[3])
+# Ex:1
+# l = [10,20,[30,40],50]
+# # for accessing nested list values
+# print(l[0])
+# print(l[1])
+# print(l[3])
 
-# for accessing inner nested list values
-print(l[2][0])
-print(l[2][1])
+# # for accessing inner nested list values
+# print(l[2][0])
+# print(l[2][1])
 
-# for updating nested list values
-l[1] = 200
-l[3] = 500
-print(l)
+# # for updating nested list values
+# l[1] = 200
+# l[3] = 500
+# print(l)
 
-# for updating inner nested list values
-l[2][0] = 300
-l[2][1] = 400
-print(l)
+# # for updating inner nested list values
+# l[2][0] = 300
+# l[2][1] = 400
+# print(l)
+
+
+# Ex:2 Different ways to flatten a Nested list?
+l = [[10,20],[30,40],[50,60]]
+
+# flatten list using for loop?
+flatten_list = []
+for i in l:
+    for j in i:
+        flatten_list.append(j)
+print(flatten_list)
+
+# flatten list using complimentary expression?
+flatlist = [y for x in l for y in x]
+print(flatlist)
+
+# flatten list using itertools module?
+import itertools
+flatlistiter = list(itertools.chain.from_iterable(l))
+print(flatlistiter)
