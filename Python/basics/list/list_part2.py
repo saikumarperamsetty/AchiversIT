@@ -22,27 +22,27 @@
 
 # any() and all()
 # any()
-l = [True,False,True]
-any_result = any(l)
-all_result = all(l)
-print(any_result)
-print(all_result)
+# l = [True,False,True]
+# any_result = any(l)
+# all_result = all(l)
+# print(any_result)
+# print(all_result)
 
 # unpacking(Destructering) in list and tuple
 # Destructering = Extracting the items and saving to variable is called 'Destructuring'
 # list
-l = [10,20,30]
-a,b,c = l
-print(a)
-print(b)
-print(c)
+# l = [10,20,30]
+# a,b,c = l
+# print(a)
+# print(b)
+# print(c)
 
 # tuple
-t = (10,20,30)
-x,y,z = t
-print(x)
-print(y)
-print(z)
+# t = (10,20,30)
+# x,y,z = t
+# print(x)
+# print(y)
+# print(z)
 
 
 # Ex:29 How to Find Even & Odd Numbers Sum on list in Python?
@@ -56,3 +56,25 @@ print(z)
 #         odd_sum += num
 # print('Even Numbers Sum in Given List:',even_sum)
 # print('Odd Numbers Sum in Given List:',odd_sum)
+
+
+# Nested Lists:
+l = [10,20,[30,40],50]
+# for accessing nested list values
+print(l[0])
+print(l[1])
+print(l[3])
+
+# for accessing inner nested list values
+print(l[2][0])
+print(l[2][1])
+
+# for updating nested list values
+l[1] = 200
+l[3] = 500
+print(l)
+
+# for updating inner nested list values
+l[2][0] = 300
+l[2][1] = 400
+print(l)
