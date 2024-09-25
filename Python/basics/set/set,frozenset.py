@@ -124,12 +124,18 @@
 
 
 #Ex:5 Realtime Example of set{} datatype with String values?
-str1 = {'MySQL','Bhagavdhgita','Khurran','Bible','Java','Python'}
-str2 = {'React','JavaScript','Bhagavdhgita','Khurran','Bible','Ramayana','Mahabharata'}
-print(str1.union(str2))
-print(str1.intersection(str2))
-print(str1.difference(str2))
-print(str1.symmetric_difference(str2))
-print(str1.isdisjoint(str2))
-print(str1.issubset(str2))
-print(str2.issuperset(str1))
+# str1 = {'MySQL','Bhagavdhgita','Khurran','Bible','Java','Python'}
+# str2 = {'React','JavaScript','Bhagavdhgita','Khurran','Bible','Ramayana','Mahabharata'}
+# print(str1.union(str2))
+# print(str1.intersection(str2))
+# print(str1.difference(str2))
+# print(str1.symmetric_difference(str2))
+# print(str1.isdisjoint(str2))
+# print(str1.issubset(str2))
+# print(str2.issuperset(str1))
+
+
+# set comprehension: it means compact way (or) shorter way to create set.
+# syntax = {expression iteration condition}
+set_c = {x for x in range(1,11) if x % 3 == 0}
+print(set_c)
