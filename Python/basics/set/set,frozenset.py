@@ -137,5 +137,33 @@
 
 # set comprehension: it means compact way (or) shorter way to create set.
 # syntax = {expression iteration condition}
-set_c = {x for x in range(1,11) if x % 3 == 0}
-print(set_c)
+# set_c = {x for x in range(1,11) if x % 3 == 0}
+# print(set_c)
+
+
+# FrozenSet Datatype:
+# It is immutable version of set{} datatype
+l = [10,20,30]
+f = frozenset(l)
+print(f)            # output = frozenset({10, 20, 30})
+
+# for loop in frozenset{}
+l = [10,20,30]
+f = frozenset(l)
+for x in f:
+    print(x)            # output = 10 20 30
+
+# max() method in frozenset{}
+l = [10,20,30]
+f = frozenset(l)
+print(max(f))           # output = 30
+
+# min() method in frozenset{}
+l = [10,20,30]
+f = frozenset(l)
+print(min(f))           # output = 10
+
+# sum() method in frozenset{}
+l = [10,20,30]
+f = frozenset(l)
+print(sum(f))           # output = 60
