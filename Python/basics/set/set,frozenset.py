@@ -23,7 +23,7 @@
 # s.add((10,28,30,40,50))     # it will add only one item at a time
 # print(s)                    #  output = {28, (10, 28, 30, 40, 50)}
 
-# How to update elements in set{}?
+#Ex:2 How to update elements in set{}?
 # s = set()
 # l = [10,28,30,40,50]
 # s.update(l,range(1,6))    # it is updating with range function along with that values 1,2,3,4,5
@@ -59,7 +59,7 @@
 # print(s)                    # output = it is giving empty as result i.e set()
 
 
-# Mathematical Functions on Set{} Datatype:
+#Ex:3 Mathematical Functions on Set{} Datatype:
 # union(): --> |
 # intersection(): --> &
 # difference(): --> -
@@ -69,41 +69,55 @@
 # issubset():
 
 # How to use union() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.union(y))       # it will check common elements without duplicates
-print(x|y)              # output = {40, 10, 50, 20, 60, 30}
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.union(y))       # it will check common elements without duplicates
+# print(x|y)              # output = {40, 10, 50, 20, 60, 30}
 
 # How to use intersection() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.intersection(y))    # it will check only common elements from both sets
-print(x&y)                  # output = {40,30}
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.intersection(y))    # it will check only common elements from both sets
+# print(x&y)                  # output = {40,30}
 
 # How to use difference() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.difference(y))          # it will check only unique elements w.r.t x-y or y-x from both sets
-print(x-y)                      # output = {10, 20}
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.difference(y))          # it will check only unique elements w.r.t x-y or y-x from both sets
+# print(x-y)                      # output = {10, 20}
 
 # How to use symmetric_diffrence() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.symmetric_difference(y))    # it will check only other than common elements rest of the elements from both sets
-print(x^y)                          # output = {10, 50, 20, 60}
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.symmetric_difference(y))    # it will check only other than common elements rest of the elements from both sets
+# print(x^y)                          # output = {10, 50, 20, 60}
 
 # How to use isdisjoint() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.isdisjoint(y))    #False          # check if common elements are connected from both sets, then it will False
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.isdisjoint(y))    #False          # check if common elements are connected from both sets, then it will False
 
 # How to use issubset() method in set?
-x = {10,20,30,40}
-y = {30,40,50,60}
-print(x.issubset(y))     #False            # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
+# x = {10,20,30,40}
+# y = {30,40,50,60}
+# print(x.issubset(y))     #False            # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
 
 # How to use issuperset() method in set?
-x = {10,20,30,40}
-y = {10,20,30,40,50,60,70,80}
-print(x.issuperset(y))   #False              # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
-print(y.issuperset(x))   #True
+# x = {10,20,30,40}
+# y = {10,20,30,40,50,60,70,80}
+# print(x.issuperset(y))   #False              # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
+# print(y.issuperset(x))   #True
+
+
+#Ex:4 Realtime Example of set{} datatype?
+student_ids = [101,102,103,104,105,106,107,108,109,11171,218,28]
+unique_set = set()
+for id in student_ids:
+    unique_set.add(id)
+    print('Unique Set Ids: ',unique_set)
+
+print('is 108 in the set? ',108 in unique_set)
+print('is 11171 in the set? ',11171 in unique_set)
+print('is 228 in the set? ',28 in unique_set)
+print('is 218 in the set? ',218 in unique_set)
+print('is 254 in the set? ',254 in unique_set)
