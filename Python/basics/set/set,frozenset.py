@@ -100,24 +100,36 @@
 # How to use issubset() method in set?
 # x = {10,20,30,40}
 # y = {30,40,50,60}
-# print(x.issubset(y))     #False            # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
+# print(x.issubset(y))     #False            # check if all x (or) y set elements are connected in y (or) x set elements or not, if all elements are connected then it will give True
 
 # How to use issuperset() method in set?
 # x = {10,20,30,40}
 # y = {10,20,30,40,50,60,70,80}
-# print(x.issuperset(y))   #False              # check if all x (or) y elements are connected in y (or) x elements or not, if all elements are connected then it will give True
+# print(x.issuperset(y))   #False              # check if all x (or) y set elements are connected in y (or) x set elements or not, if all elements are connected then it will give True
 # print(y.issuperset(x))   #True
 
 
-#Ex:4 Realtime Example of set{} datatype?
-student_ids = [101,102,103,104,105,106,107,108,109,11171,218,28]
-unique_set = set()
-for id in student_ids:
-    unique_set.add(id)
-    print('Unique Set Ids: ',unique_set)
+#Ex:4 Realtime Example of set{} datatype with integer values?
+# student_ids = [101,102,103,104,105,106,107,108,109,11171,218,28]
+# unique_set = set()
+# for id in student_ids:
+#     unique_set.add(id)
+#     print('Unique Set Ids: ',unique_set)
 
-print('is 108 in the set? ',108 in unique_set)
-print('is 11171 in the set? ',11171 in unique_set)
-print('is 228 in the set? ',28 in unique_set)
-print('is 218 in the set? ',218 in unique_set)
-print('is 254 in the set? ',254 in unique_set)
+# print('is 108 in the set? ',108 in unique_set)
+# print('is 11171 in the set? ',11171 in unique_set)
+# print('is 228 in the set? ',28 in unique_set)
+# print('is 218 in the set? ',218 in unique_set)
+# print('is 254 in the set? ',254 in unique_set)
+
+
+#Ex:5 Realtime Example of set{} datatype with String values?
+str1 = {'MySQL','Bhagavdhgita','Khurran','Bible','Java','Python'}
+str2 = {'React','JavaScript','Bhagavdhgita','Khurran','Bible','Ramayana','Mahabharata'}
+print(str1.union(str2))
+print(str1.intersection(str2))
+print(str1.difference(str2))
+print(str1.symmetric_difference(str2))
+print(str1.isdisjoint(str2))
+print(str1.issubset(str2))
+print(str2.issuperset(str1))
