@@ -133,8 +133,15 @@
 
 
 # for loop in Nested Dictonary?
-nested_dict = {'outer_key':{'inner_key':'value','inner_key2':'inner_value2'}}
-for outer_key, inner_dict in nested_dict.items():
-    print('Outer_key:',outer_key)
-    for inner_key, value in inner_dict.items():
-        print('Inner_key:',inner_key,'<-->','Value:',value)
+# nested_dict = {'outer_key':{'inner_key':'value','inner_key2':'inner_value2'}}
+# for outer_key, inner_dict in nested_dict.items():
+#     print('Outer_key:',outer_key)
+#     for inner_key, value in inner_dict.items():
+#         print('Inner_key:',inner_key,'<-->','Value:',value)
+
+
+# How to find Sum() method in dict{}?
+d = {1:10, 2:20, 3:30, 4:40, 5:50}
+print('Sum of of Keys:',sum(d.keys()))          # output = 15
+print('Sum of of Values:',sum(d.values()))      # output = 150
+print(d.items())                                # output = dict_items([(1, 10), (2, 20), (3, 30), (4, 40), (5, 50)])
