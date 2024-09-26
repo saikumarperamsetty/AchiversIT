@@ -148,9 +148,38 @@
 
 
 # Program to find a Occerences each character in Python?
-str = input('Enter a word to find Occurences of each character:')
-d = {}
-for x in str:
-    d[x] = d.get(x,0)+1
-for k,v in d.items():
-    print(k, 'occured in',v,'times')
+# str = input('Enter a word to find Occurences of each character:')
+# d = {}
+# for x in str:
+#     d[x] = d.get(x,0)+1
+# for k,v in d.items():
+#     print(k, 'occured in',v,'times')
+
+
+# Dictonary Comprehension:
+# ========================
+# syntax:
+# dict_c = {expression iteration condition}
+
+# for loop using in dict_c?
+dict_c = {x for x in range(1,11)}
+print(dict_c)                                                       # output = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+# Ex: to Find Square values by using dict_comprehension?
+dict_c = {x:x**2 for x in range(1,5)}
+print(dict_c)                                                       # output = {1: 1, 2: 4, 3: 9, 4: 16}
+
+# by using list How to Find Quebe by using dict_comprehension?
+l = [1,2,3,4,5]
+dict_c = {x:x**3 for x in l}
+print(dict_c)                                                       # output = {1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+
+# by using tuple How to Find Quebe by using dict_comprehension?
+t = (1,2,3,4,5)
+dict_c = {x:x**2 for x in t}
+print(dict_c)                                                       # output = {1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
+
+# by using set How to Find Quebe by using dict_comprehension?
+s = [1,2,3,4,5]
+dict_c = {x:x**2 for x in s}
+print(dict_c)                                                       # output = {1: 1, 2: 8, 3: 27, 4: 64, 5: 125}
