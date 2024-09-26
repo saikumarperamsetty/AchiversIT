@@ -51,71 +51,82 @@
 #Ex:5 Different type of methods in dict{}?
 # ==========================================
 # get() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-print(d.get(2))             # output = B, if there is value presented in dict, it wii give that value
-print(d.get(4,'no value for this dictonary'))   # output = None, if there is no value presented in dict, it wii give 'None'
+# d = {1:'A',2:'B',3:'C'}
+# print(d.get(2))                                 # output = B, if there is value presented in dict, it wii give that value
+# print(d.get(4,'no value for this dictonary'))   # output = None, if there is no value presented in dict, it wii give 'None'
 
 
 # pop() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-d.pop(1)    # it will remove that particular item only
-d.pop(5)    # if element not there in dict{}, it will give KeyError
-print(d)    # output = {2: 'B', 3: 'C'}
+# d = {1:'A',2:'B',3:'C'}
+# d.pop(1)    # it will remove that particular item only
+# d.pop(5)    # if element not there in dict{}, it will give KeyError
+# print(d)    # output = {2: 'B', 3: 'C'}
 
 
 # popitem() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-d.popitem()    # it will remove that last item only in the dict{}
-d.popitem()    # it will remove that last item only in the dict{}
-d.popitem()    # it will remove that last item only in the dict{}
-d.popitem()    # if dict{} is empty, then also we are trying to use popitem() method it will give KeyError: 'popitem(): dictionary is empty'
-print(d)
+# d = {1:'A',2:'B',3:'C'}
+# d.popitem()    # it will remove that last item only in the dict{}
+# d.popitem()    # it will remove that last item only in the dict{}
+# d.popitem()    # it will remove that last item only in the dict{}
+# d.popitem()    # if dict{} is empty, then also we are trying to use popitem() method it will give KeyError: 'popitem(): dictionary is empty'
+# print(d)
 
 
 # copy() method in dict{}
-d = {1:10, 2:20, 3:30, 4:40}
-copied_dict = d.copy()
-d[2] = 200              # Here d[2] = 200 is updated the dict{} value
-print(d)                # output = {1: 10, 2: 200, 3: 30, 4: 40}
-print(copied_dict)      # output = {1: 10, 2: 20, 3: 30, 4: 40}
+# d = {1:10, 2:20, 3:30, 4:40}
+# copied_dict = d.copy()
+# d[2] = 200              # Here d[2] = 200 is updated the dict{} value
+# print(d)                # output = {1: 10, 2: 200, 3: 30, 4: 40}
+# print(copied_dict)      # output = {1: 10, 2: 20, 3: 30, 4: 40}
 
 
 # keys() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-print(d.keys())             # output = dict_keys([1, 2, 3]), it will give only keys
+# d = {1:'A',2:'B',3:'C'}
+# print(d.keys())             # output = dict_keys([1, 2, 3]), it will give only keys
 
 
 # values() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-print(d.values())             # output = dict_values(['A', 'B', 'C']), it will give only values
+# d = {1:'A',2:'B',3:'C'}
+# print(d.values())             # output = dict_values(['A', 'B', 'C']), it will give only values
 
 
 # items() method in dict{}
-d = {1:'A',2:'B',3:'C'}
-print(d.items())             # output = dict_items([(1, 'A'), (2, 'B'), (3, 'C')]), if we want to convert dict items to tuple items then we can use this items() method.
+# d = {1:'A',2:'B',3:'C'}
+# print(d.items())             # output = dict_items([(1, 'A'), (2, 'B'), (3, 'C')]), if we want to convert dict items to tuple items then we can use this items() method.
 
 
 # items() method in dict{} wit k,v help for loop
-d = {1:10, 2:20, 3:30, 4:40}
-for k,v in d.items():
-    print('Keys:',k,'---','Values:',v)
+# d = {1:10, 2:20, 3:30, 4:40}
+# for k,v in d.items():
+#     print('Keys:',k,'---','Values:',v)
 
 
 # update() method in dict{}
-d = {'name':'sai kumar','age':28}
-d1 = {'city':'bangalore','age':28}
-d1 = {'city':'bangalore','age':29}     # it will update with new value
-d.update(d1)    # it will update with new value
-print(d)        # output = {'name': 'sai kumar', 'age': 28, 'city': 'bangalore'}
+# d = {'name':'sai kumar','age':28}
+# d1 = {'city':'bangalore','age':28}
+# d1 = {'city':'bangalore','age':29}     # it will update with new value
+# d.update(d1)    # it will update with new value
+# print(d)        # output = {'name': 'sai kumar', 'age': 28, 'city': 'bangalore'}
 
 
 # is it possible to allow list,tuple,set values in dictonary?
-d_list = {'name':'sai kumar',[1,2]:28}
-d_tuple = {'name':'sai kumar',(1,2):28}
-d_set = {'name':'sai kumar',{1,2}:28}
-d_dict = {'name':'sai kumar',{1:'sai',2:'kumar'}:28}
+# d_list = {'name':'sai kumar',[1,2]:28}
+# d_tuple = {'name':'sai kumar',(1,2):28}
+# d_set = {'name':'sai kumar',{1,2}:28}
+# d_dict = {'name':'sai kumar',{1:'sai',2:'kumar'}:28}
+# print(d_list)       # output = TypeError: unhashable type: 'list'
+# print(d_tuple)      # output = {'name': 'sai kumar', (1, 2): 28}
+# print(d_set)         # output = TypeError: unhashable type: 'set'
+# print(d_dict)          # output = TypeError: unhashable type: 'dict'
 
-print(d_list)       # output = TypeError: unhashable type: 'list'
-print(d_tuple)      # output = {'name': 'sai kumar', (1, 2): 28}
-print(d_set)         # output = TypeError: unhashable type: 'set'
-print(d_dict)          # output = TypeError: unhashable type: 'dict'
+
+# Nested Dictonary:
+# =================
+nested_dict = {'outer_key':{'inner_key':'value'}}
+print(nested_dict['outer_key']['inner_key'])                 #getting dict value     # output = value
+
+nested_dict['outer_key']['new_inner_key'] = 'new_value'       #updating    # output = {'outer_key': {'inner_key': 'value', 'new_inner_key': 'new_value'}}
+print(nested_dict)
+
+del nested_dict['outer_key']['inner_key']                       #deleting   # output = {'outer_key': {}}
+print(nested_dict)
