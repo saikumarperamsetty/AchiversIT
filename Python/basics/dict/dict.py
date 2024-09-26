@@ -141,7 +141,16 @@
 
 
 # How to find Sum() method in dict{}?
-d = {1:10, 2:20, 3:30, 4:40, 5:50}
-print('Sum of of Keys:',sum(d.keys()))          # output = 15
-print('Sum of of Values:',sum(d.values()))      # output = 150
-print(d.items())                                # output = dict_items([(1, 10), (2, 20), (3, 30), (4, 40), (5, 50)])
+# d = {1:10, 2:20, 3:30, 4:40, 5:50}
+# print('Sum of of Keys:',sum(d.keys()))          # output = 15
+# print('Sum of of Values:',sum(d.values()))      # output = 150
+# print(d.items())                                # output = dict_items([(1, 10), (2, 20), (3, 30), (4, 40), (5, 50)])
+
+
+# Program to find a Occerences each character in Python?
+str = input('Enter a word to find Occurences of each character:')
+d = {}
+for x in str:
+    d[x] = d.get(x,0)+1
+for k,v in d.items():
+    print(k, 'occured in',v,'times')
