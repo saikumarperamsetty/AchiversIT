@@ -122,11 +122,19 @@
 
 # Nested Dictonary:
 # =================
-nested_dict = {'outer_key':{'inner_key':'value'}}
-print(nested_dict['outer_key']['inner_key'])                 #getting dict value     # output = value
+# nested_dict = {'outer_key':{'inner_key':'value'}}
+# print(nested_dict['outer_key']['inner_key'])                 #getting dict value     # output = value
 
-nested_dict['outer_key']['new_inner_key'] = 'new_value'       #updating    # output = {'outer_key': {'inner_key': 'value', 'new_inner_key': 'new_value'}}
-print(nested_dict)
+# nested_dict['outer_key']['new_inner_key'] = 'new_value'       #updating    # output = {'outer_key': {'inner_key': 'value', 'new_inner_key': 'new_value'}}
+# print(nested_dict)
 
-del nested_dict['outer_key']['inner_key']                       #deleting   # output = {'outer_key': {}}
-print(nested_dict)
+# del nested_dict['outer_key']['inner_key']                       #deleting   # output = {'outer_key': {}}
+# print(nested_dict)
+
+
+# for loop in Nested Dictonary?
+nested_dict = {'outer_key':{'inner_key':'value','inner_key2':'inner_value2'}}
+for outer_key, inner_dict in nested_dict.items():
+    print('Outer_key:',outer_key)
+    for inner_key, value in inner_dict.items():
+        print('Inner_key:',inner_key,'<-->','Value:',value)
