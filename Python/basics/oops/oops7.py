@@ -49,14 +49,28 @@
 # 3. Constructor Overloading
 
 # 1. Operator Overloading
-class Book:
-    def __init__(self,pages):
-        self.pages = pages
-    def __add__(self,other):
-        return self.pages + other.pages
+# class Book:
+#     def __init__(self,pages):
+#         self.pages = pages
+#     def __add__(self,other):
+#         return self.pages + other.pages
+#     def __mul__(self,other):
+#         return self.pages * other.pages
+# book1 = Book(10)
+# book2 = Book(20)
+# print(book1+book2)
+# print(book1*book2)
+
+# 1.1 Operator Overloading with Two Diffrent Classes?
+class Employee:
+    def __init__(self,name,salary):
+        self.name = name
+        self.salary = salary
     def __mul__(self,other):
-        return self.pages * other.pages
-book1 = Book(10)
-book2 = Book(20)
-print(book1+book2)
-print(book1*book2)
+        return self.salary * other.days
+class Timesheet:
+    def __init__(self,days):
+        self.days = days
+obj1 = Employee('Sai Kumar',1300)
+obj2 = Timesheet(27)
+print(obj1*obj2)
