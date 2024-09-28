@@ -17,7 +17,7 @@
 #     obj.talk()    
 # l = [Duck(), Cat(), Dog()]
 # for obj in l:
-#     f1(obj)
+#     f1(obj)       # output = Quack..Quack..,Meow..Meow..,Bow..Bow..
 
 
 # Ex:2 Polymorphism with hasattr() method in Python?
@@ -38,7 +38,7 @@
 #         obj.bark()  
 # l = [Duck(), Cat(), Dog()]
 # for obj in l:
-#     f1(obj)
+#     f1(obj)       # output = Quack..Quack..,Meow..Meow..,Bow..Bow..
 
 
 # Overloading:
@@ -59,8 +59,8 @@
 #         return self.pages * other.pages
 # book1 = Book(10)
 # book2 = Book(20)
-# print(book1+book2)
-# print(book1*book2)
+# print(book1+book2)        # output = 20
+# print(book1*book2)        # output = 200
 
 # 1.1 Operator Overloading with Two Diffrent Classes?
 # class Employee:
@@ -74,7 +74,7 @@
 #         self.days = days
 # obj1 = Employee('Sai Kumar',1300)
 # obj2 = Timesheet(27)
-# print(obj1*obj2)
+# print(obj1*obj2)      # output = 241700
 
 
 # 2. Method Overloading:
@@ -90,20 +90,33 @@
 #         else:
 #             print('Provide two or more arguments')
 # obj = Test()
-# obj.sum(10,20,30)
-# obj.sum(20,30)
-# obj.sum(10)
+# obj.sum(10,20,30)     # output = 60
+# obj.sum(20,30)        # output = 50
+# obj.sum(10)           # output = 10
 
 
 # Ex:2 Method Overloading with *(args)?
+# class Test:
+#     def sum(self, *a):
+#         total = 0
+#         for x in a:
+#             total = total + x
+#         print('The Sum:',total)
+# obj = Test()
+# obj.sum(10,20,30)             # output = 60
+# obj.sum(10,20)                # output = 30
+# obj.sum(28)                   # output = Provide two or more arguments
+# obj.sum(10,20,30,40,50)       # output = 150
+
+
+# Ex: 1 Constructor Overloading:
+# ===============================
 class Test:
-    def sum(self, *a):
-        total = 0
-        for x in a:
-            total = total + x
-        print('The Sum:',total)
-obj = Test()
-obj.sum(10,20,30)
-obj.sum(10,20)
-obj.sum(28)
-obj.sum(10,20,30,40,50)
+    def __init__(self):
+        print('No arg COnstructor')
+    def __init__(self,a):
+        print('1 arg COnstructor')
+    def __init__(self,a,b):
+        print('2 arg COnstructor')
+# obj2 = Test(10,20)            # output = 2 Arguments
+obj1 = Test(10)                 # output = TypeError: Test.__init__() missing 1 required positional argument: 'b'
