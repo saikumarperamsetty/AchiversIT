@@ -160,48 +160,63 @@
 
 
 # Realtime Example of Polymorphism : Logistics Management System
-class DeliveryMethod:
-    def caluclate_cost(self,weight,distance):
-        raise NotImplementedError('Subclasses Must implement this method')
-class AirDelivery:
-    def caluclate_cost(self,weight,distance):
-        air_cargo_fee = 15.0
-        cost = (weight * 5.0 + distance * 0.5)+air_cargo_fee
-        return cost
-class LandDelivery:
-    def caluclate_cost(self,weight,distance):
-        cost = (weight * 2.0 + distance + 0.1)
-        return cost
-class SeaDelivery:
-    def caluclate_cost(self,weight,distance):
-        container_fee = 30.0
-        cost = (weight * 3.0 + distance + 0.3)+container_fee
-        return cost
+# class DeliveryMethod:
+#     def caluclate_cost(self,weight,distance):
+#         raise NotImplementedError('Subclasses Must implement this method')
+# class AirDelivery:
+#     def caluclate_cost(self,weight,distance):
+#         air_cargo_fee = 15.0
+#         cost = (weight * 5.0 + distance * 0.5)+air_cargo_fee
+#         return cost
+# class LandDelivery:
+#     def caluclate_cost(self,weight,distance):
+#         cost = (weight * 2.0 + distance + 0.1)
+#         return cost
+# class SeaDelivery:
+#     def caluclate_cost(self,weight,distance):
+#         container_fee = 30.0
+#         cost = (weight * 3.0 + distance + 0.3)+container_fee
+#         return cost
     
-def caluclate_delivery_cost(delivery_method,weight,distance):
-    return delivery_method.caluclate_cost(weight,distance)
+# def caluclate_delivery_cost(delivery_method,weight,distance):
+#     return delivery_method.caluclate_cost(weight,distance)
 
-if __name__ == '__main__':
-    while True:
-        print('Choose a Delevery Method')
-        print('1. Air Deliver')
-        print('2. Land Delivery')
-        print('3. Sea Delivery')
-        print('4. Exit')
-        choice = int(input('Enter Your choice[1-4]:'))
-        if choice in [1,2,3]:
-            weight = float(input('Enter weight of your Delivery:'))
-            distance = float(input('Enter distance of your Delivery:'))
-            if choice == 1:
-                method = AirDelivery()
-            elif choice == 2:
-                method = LandDelivery()
-            elif choice == 3:
-                method = SeaDelivery()
-            cost = caluclate_delivery_cost(method,weight,distance)
-            print(f'The Total Delivery Cost:{cost:.2f}')
-        elif choice == 4:
-            print('Executing the Program')
-            break
-        else:
-            print('Invalid Choice you given...')
+# if __name__ == '__main__':
+#     while True:
+#         print('Choose a Delevery Method')
+#         print('1. Air Deliver')
+#         print('2. Land Delivery')
+#         print('3. Sea Delivery')
+#         print('4. Exit')
+#         choice = int(input('Enter Your choice[1-4]:'))
+#         if choice in [1,2,3]:
+#             weight = float(input('Enter weight of your Delivery:'))
+#             distance = float(input('Enter distance of your Delivery:'))
+#             if choice == 1:
+#                 method = AirDelivery()
+#             elif choice == 2:
+#                 method = LandDelivery()
+#             elif choice == 3:
+#                 method = SeaDelivery()
+#             cost = caluclate_delivery_cost(method,weight,distance)
+#             print(f'The Total Delivery Cost:{cost:.2f}')
+#         elif choice == 4:
+#             print('Executing the Program')
+#             break
+#         else:
+#             print('Invalid Choice you given...')
+
+
+# Mixins: Basic Example of Mixins?
+class LogMixin:
+    def log(self,message):
+        print(f'Log:{message}')
+class SaveMixin:
+    def save(self,data):
+        print(f'Saving:{data}')
+class MyClass(LogMixin,SaveMixin):
+    def process(self):
+        self.log('Processing message')
+        self.save('Data has been Processed')
+child = MyClass()
+child.process()
