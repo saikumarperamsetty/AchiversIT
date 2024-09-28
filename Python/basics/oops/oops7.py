@@ -81,15 +81,29 @@
 # ----------------------
 # it is not supported in Python.
 # Ex:1
+# class Test:
+#     def sum(self, a=None,b=None,c=None):
+#         if a != None and b != None and c != None:
+#             print('The Sum:',a+b+c)
+#         elif a != None and b != None:
+#             print('The Sum:',a+b)
+#         else:
+#             print('Provide two or more arguments')
+# obj = Test()
+# obj.sum(10,20,30)
+# obj.sum(20,30)
+# obj.sum(10)
+
+
+# Ex:2 Method Overloading with *(args)?
 class Test:
-    def sum(self, a=None,b=None,c=None):
-        if a != None and b != None and c != None:
-            print('The Sum:',a+b+c)
-        elif a != None and b != None:
-            print('The Sum:',a+b)
-        else:
-            print('Provide two or more arguments')
+    def sum(self, *a):
+        total = 0
+        for x in a:
+            total = total + x
+        print('The Sum:',total)
 obj = Test()
 obj.sum(10,20,30)
-obj.sum(20,30)
-obj.sum(10)
+obj.sum(10,20)
+obj.sum(28)
+obj.sum(10,20,30,40,50)
