@@ -127,14 +127,33 @@
 # 2. Constructor Overriding:
 
 # 1. Example of Method Overriding?
-class Parent:
-    def __init__(self):
-        print('Money+Gold+Land')
-    def marry(self):
-        print('Kajal')
-class Child(Parent):
-    def marry(self):
-        super().marry()
-        print('Rishi')
-child = Child()
-child.marry()
+# class Parent:
+#     def __init__(self):
+#         print('Money+Gold+Land')
+#     def marry(self):
+#         print('Kajal')
+# class Child(Parent):
+#     def marry(self):
+#         super().marry()
+#         print('Rishi')
+# child = Child()
+# child.marry()
+
+
+# 2. Example of Constructor Overriding?
+class Person:
+    def __init__(self,name,age):
+        self.name = name
+        self.age = age
+class Employee(Person):
+    def __init__(self,name,age,eno,esal):
+        super().__init__(name,age)
+        self.eno = eno
+        self.esal = esal
+    def details(self):
+        print('Emp Name: ',self.name)
+        print('Emp Age: ',self.age)
+        print('Emp no: ',self.eno)
+        print('Emp Salary: ',self.esal)
+employee = Employee('Sai Kumar',28,6963,62500)
+employee.details()
