@@ -111,12 +111,30 @@
 
 # Ex: 1 Constructor Overloading:
 # ===============================
-class Test:
+# class Test:
+#     def __init__(self):
+#         print('No arg COnstructor')
+#     def __init__(self,a):
+#         print('1 arg COnstructor')
+#     def __init__(self,a,b):
+#         print('2 arg COnstructor')
+# # obj2 = Test(10,20)            # output = 2 Arguments
+# obj1 = Test(10)                 # output = TypeError: Test.__init__() missing 1 required positional argument: 'b'
+
+
+# Overriding:
+# 1. Method Overriding:
+# 2. Constructor Overriding:
+
+# 1. Example of Method Overriding?
+class Parent:
     def __init__(self):
-        print('No arg COnstructor')
-    def __init__(self,a):
-        print('1 arg COnstructor')
-    def __init__(self,a,b):
-        print('2 arg COnstructor')
-# obj2 = Test(10,20)            # output = 2 Arguments
-obj1 = Test(10)                 # output = TypeError: Test.__init__() missing 1 required positional argument: 'b'
+        print('Money+Gold+Land')
+    def marry(self):
+        print('Kajal')
+class Child(Parent):
+    def marry(self):
+        super().marry()
+        print('Rishi')
+child = Child()
+child.marry()
