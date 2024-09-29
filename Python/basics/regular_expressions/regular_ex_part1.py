@@ -114,11 +114,18 @@
 
 
 # 2. fullmatch():
+# import re
+# s = input('Enter Pattern to Check: ')
+# m = re.fullmatch(s,'abcfghqdnd')        #Exactly Match the Given String
+# if m != None:
+#     print('Match String is available in Given string')
+#     print('Start index:',m.start(),'end index:',m.end())
+# else:
+#     print('Match String is Not available in Given string')
+
+
+# 2. finditer():
 import re
-s = input('Enter Pattern to Check: ')
-m = re.fullmatch(s,'abcfghqdnd')        #Exactly Match the Given String
-if m != None:
-    print('Match String is available in Given string')
-    print('Start index:',m.start(),'end index:',m.end())
-else:
-    print('Match String is Not available in Given string')
+itr = re.finditer('[a-z]','a0b2*be@kd%jo$')
+for match in itr:
+    print('index present at:',match.start(),'---',match.group())
