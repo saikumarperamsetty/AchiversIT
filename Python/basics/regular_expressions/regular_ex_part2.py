@@ -37,9 +37,24 @@
 # (?=) = asserts what follows
 # (?<=) = asserts what preceds
 
+# Ex:
+# import re
+# text = 'fool123 bar456'
+# pattern1 = re.findall(r'(?<=foo)\d+)',text)
+# pattern2 = re.findall(r'\w+(?=456)',text)
+# print(pattern1)
+# print(pattern2)
+
+
+# Flags(Modifiers): 
 import re
-text = 'fool123 bar456'
-pattern1 = re.findall(r'(?<=foo)\d+)',text)
-pattern2 = re.findall(r'\w+(?=456)',text)
-print(pattern1)
-print(pattern2)
+# pattern = r'Hello'  # for Multiline -> starts with
+pattern = r'world'  # for Multiline -> ends with
+text = """Hello orld
+world Hello
+Hello world
+"""
+match = re.search(pattern,text,re.IGNORECASE | re.MULTILINE)
+print(match)    # output(re.IGNORECASE) = <re.Match object; span=(0, 4), match='Hello'> -->it is for starts with
+print(match)    # output(re.MULTILINE) = <re.Match object; span=(11, 16), match='world'> -->it is for ends with
+print(match.group())    # output = Whatever string we are going to find That String it will return.
