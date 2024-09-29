@@ -68,10 +68,21 @@
 
 # Ans:
 # ---
+# import re
+# str = input('Enter String to verify format: ')
+# match = re.fullmatch('^[a-k][0369][a-zA-Z0-9#]{2,}$',str)
+# if match != None:
+#     print(match,"It's valid format")
+# else:
+#     print(match,"It's Not valid format")
+
+
+# How to create Mobile Number Format using Regular Expression?
 import re
-str = input('Enter String to verify format: ')
-match = re.fullmatch('^[a-k][0369][a-zA-Z0-9#]{2,}$',str)
-if match != None:
-    print(match,"It's valid format")
-else:
-    print(match,"It's Not valid format")
+while True:
+    pattern = input('Enter Mobile Number format: ')
+    matcher = re.fullmatch('^[6-9][0-9]{9}',pattern)
+    if matcher != None:
+        print(pattern,'its Valid Mobile number Format')
+    else:
+        print(pattern,'its Not a Valid Mobile number Format')
