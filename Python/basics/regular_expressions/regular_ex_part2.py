@@ -26,8 +26,20 @@
 
 
 # Anchors(): \b\b- it is boundary checking
+# import re
+# text = 'Hello World, Hello Python World'
+# pattern = r'\bWorld\b'
+# match = re.findall(pattern,text)    # it will result in list
+# print(match)                        # output = ['World', 'World']
+
+
+# Lookahead and LookBehind:
+# (?=) = asserts what follows
+# (?<=) = asserts what preceds
+
 import re
-text = 'Hello World, Hello Python World'
-pattern = r'\bWorld\b'
-match = re.findall(pattern,text)    # it will result in list
-print(match)                        # output = ['World', 'World']
+text = 'fool123 bar456'
+pattern1 = re.findall(r'(?<=foo)\d+)',text)
+pattern2 = re.findall(r'\w+(?=456)',text)
+print(pattern1)
+print(pattern2)
