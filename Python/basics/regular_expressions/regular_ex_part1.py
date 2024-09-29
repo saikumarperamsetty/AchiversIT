@@ -124,8 +124,15 @@
 #     print('Match String is Not available in Given string')
 
 
-# 2. finditer():
+# 3. finditer():
+# import re
+# itr = re.finditer('[a-z]','a0b2*be@kd%jo$')       # Wherever the Pattern matches only that elements will return.
+# for match in itr:
+#     print('index present at:',match.start(),'---',match.group())
+
+
+# 4. sub():
+# syntax = [regex,replacement,targetstring]
 import re
-itr = re.finditer('[a-z]','a0b2*be@kd%jo$')
-for match in itr:
-    print('index present at:',match.start(),'---',match.group())
+substr = re.sub('[a-z]','$','a0b2*be@kd%jo$')       # Wherever the applied symbol($) Pattern matches only that elements will changed with new string.
+print(substr)                                 # output = $0$2*$$@$$%$$$ (here Where a-z elements is there that only will Change)
