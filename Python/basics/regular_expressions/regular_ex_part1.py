@@ -61,16 +61,40 @@
 # . - include dot(.) all other chars
 
 # Ex:3 Pattern Find By Using Predefined Character Classes in Regular Expression?
+# import re
+# x = '\s'    #only space
+# x = '\S'    #Except space, any other char
+# x = '\d'    #only digits
+# x = '\D'    #Except digits, any other char
+# x = '\w'    #it represents the Alpha_numeric, Except Special Chars
+# x = '\W'    # Except Alpha_numeric, only Special Chars
+# x = '\.'    #only dot(.)
+# x = '.'     #include dot(.), all other chars
+# pattern= re.compile(x)
+# matcher = pattern.finditer('a7N @k.9bT d2.R 8$')
+# for match in matcher:
+#     print(match.start(),'....',match.group())
+
+
+# Quantifiers in Regular Expression:
+# ==================================
+# a = Exactly one time
+# a+ = Min 1 time - Max any no of time
+# a* = Min 0 time - Max any no of time
+# a? = Min 0 time - Max 1 time
+# a{m} = Exactly m time( m- means number we want to mention)
+# a{m,n} = Exactly m,n time( m,n- means number we want to mention)
+
+
+# Ex:4 Pattern Find By Using Quantifiers in Regular Expression?
 import re
-x = '\s'    #only space
-x = '\S'    #Except space, any other char
-x = '\d'    #only digits
-x = '\D'    #Except digits, any other char
-x = '\w'    #it represents the Alpha_numeric, Except Special Chars
-x = '\W'    # Except Alpha_numeric, only Special Chars
-x = '\.'    #only dot(.)
-x = '.'     #include dot(.), all other chars
+x = 'a'    # Exactly one time matching a string, it will return
+x = 'a+'    # Min 1 time of a - Max any no of time of a, wherever a is came in String that will return
+x = 'a*'    # Min 0 time of a - Max any no of time of a, wherever a is came in String that will return and include other chars(its hiding) also
+x = 'a?'    # Min 0 time of a - Max 1 time of a, wherever a is came in String that will return
+x = 'a{2}'    # Exactly m time( m- means number we want to mention), wherever a is came in String that will only return
+x = 'a{2,5}'    # Exactly m,n time( m,n- means number we want to mention), wherever a is came in String that will only return
 pattern= re.compile(x)
-matcher = pattern.finditer('a7N @k.9bT d2.R 8$')
+matcher = pattern.finditer('abaabaaab')
 for match in matcher:
     print(match.start(),'....',match.group())
