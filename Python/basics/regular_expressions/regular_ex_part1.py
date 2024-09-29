@@ -103,9 +103,20 @@
 # Functons in re module:
 # ======================
 # 1. match():
+# import re
+# s = input('Enter Pattern to Check: ')
+# m = re.match(s,'abcfghqdnd')              #Exactly Not match the Given String
+# if m != None:
+#     print('Match String is available in Given string')
+#     print('Start index:',m.start(),'end index:',m.end())
+# else:
+#     print('Match String is Not available in Given string')
+
+
+# 2. fullmatch():
 import re
 s = input('Enter Pattern to Check: ')
-m = re.match(s,'abcfghqdnd')
+m = re.fullmatch(s,'abcfghqdnd')        #Exactly Match the Given String
 if m != None:
     print('Match String is available in Given string')
     print('Start index:',m.start(),'end index:',m.end())
