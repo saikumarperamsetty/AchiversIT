@@ -87,14 +87,27 @@
 
 
 # Ex:4 Pattern Find By Using Quantifiers in Regular Expression?
+# import re
+# x = 'a'    # Exactly one time matching a string, it will return
+# x = 'a+'    # Min 1 time of a - Max any no of time of a, wherever a is came in String that will return
+# x = 'a*'    # Min 0 time of a - Max any no of time of a, wherever a is came in String that will return and include other chars(its hiding) also
+# x = 'a?'    # Min 0 time of a - Max 1 time of a, wherever a is came in String that will return
+# x = 'a{2}'    # Exactly m time( m- means number we want to mention), wherever a is came in String that will only return
+# x = 'a{2,5}'    # Exactly m,n time( m,n- means number we want to mention), wherever a is came in String that will only return
+# pattern= re.compile(x)
+# matcher = pattern.finditer('abaabaaab')
+# for match in matcher:
+#     print(match.start(),'....',match.group())
+
+
+# Functons in re module:
+# ======================
+# 1. match():
 import re
-x = 'a'    # Exactly one time matching a string, it will return
-x = 'a+'    # Min 1 time of a - Max any no of time of a, wherever a is came in String that will return
-x = 'a*'    # Min 0 time of a - Max any no of time of a, wherever a is came in String that will return and include other chars(its hiding) also
-x = 'a?'    # Min 0 time of a - Max 1 time of a, wherever a is came in String that will return
-x = 'a{2}'    # Exactly m time( m- means number we want to mention), wherever a is came in String that will only return
-x = 'a{2,5}'    # Exactly m,n time( m,n- means number we want to mention), wherever a is came in String that will only return
-pattern= re.compile(x)
-matcher = pattern.finditer('abaabaaab')
-for match in matcher:
-    print(match.start(),'....',match.group())
+s = input('Enter Pattern to Check: ')
+m = re.match(s,'abcfghqdnd')
+if m != None:
+    print('Match String is available in Given string')
+    print('Start index:',m.start(),'end index:',m.end())
+else:
+    print('Match String is Not available in Given string')
