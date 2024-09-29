@@ -34,16 +34,43 @@
 # [^a-zA-Z0-9] = except a-zA-Z0-9
 
 # Ex:2 Pattern Find in Given String By Using Character Classes in Regular Expression?
+# import re
+# x = '[abc]'
+# x = '[^abc]'
+# x = '[a-z]'
+# x = '[^a-z]'
+# x = '[A-Z]'
+# x = '[^A-Z]'
+# x = '[a-zA-Z0-9]'
+# x = '[^a-zA-Z0-9]'
+# pattern= re.compile(x)
+# matcher = pattern.finditer('a7N@k9bTd2R8$')
+# for match in matcher:
+#     print(match.start(),'....',match.group())
+
+
+# Predefined Character Classes in Regular Expression:
+# ==================================================
+# \s = only space
+# \S = Except space, any other char
+# \d = only digits
+# \D = Except digits, any other char
+# \w - it represents the Alpha_numeric, Except Special Chars
+# \W - # Except Alpha_numeric, But only Special Chars
+# \. - only dot(.)
+# . - include dot(.) all other chars
+
+# Ex:3 Pattern Find By Using Predefined Character Classes in Regular Expression?
 import re
-x = '[abc]'
-x = '[^abc]'
-x = '[a-z]'
-x = '[^a-z]'
-x = '[A-Z]'
-x = '[^A-Z]'
-x = '[a-zA-Z0-9]'
-x = '[^a-zA-Z0-9]'
+x = '\s'    #only space
+x = '\S'    #Except space, any other char
+x = '\d'    #only digits
+x = '\D'    #Except digits, any other char
+x = '\w'    #it represents the Alpha_numeric, Except Special Chars
+x = '\W'    # Except Alpha_numeric, only Special Chars
+x = '\.'    #only dot(.)
+x = '.'     #include dot(.), all other chars
 pattern= re.compile(x)
-matcher = pattern.finditer('a7N@k9bTd2R8$')
+matcher = pattern.finditer('a7N @k.9bT d2.R 8$')
 for match in matcher:
     print(match.start(),'....',match.group())
