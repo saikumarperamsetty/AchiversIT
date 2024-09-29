@@ -78,11 +78,24 @@
 
 
 # How to create Mobile Number Format using Regular Expression?
+# import re
+# while True:
+#     pattern = input('Enter Mobile Number format: ')
+#     matcher = re.fullmatch('^[6-9][0-9]{9}',pattern)
+#     if matcher != None:
+#         print(pattern,'its Valid Mobile number Format')
+#     else:
+#         print(pattern,'its Not a Valid Mobile number Format')
+
+
+# How to extract one file data into another file by using Regular Expression?
 import re
-while True:
-    pattern = input('Enter Mobile Number format: ')
-    matcher = re.fullmatch('^[6-9][0-9]{9}',pattern)
-    if matcher != None:
-        print(pattern,'its Valid Mobile number Format')
-    else:
-        print(pattern,'its Not a Valid Mobile number Format')
+f1 = open('input.txt','r')
+f2 = open('output.txt','w')
+for line in f1:
+    list = re.findall(r'^[7-9]\d{9}',f1)
+    for n in list:
+        print(n+'\n')
+print('Extracted all numbers')
+f1.close()
+f2.close()
