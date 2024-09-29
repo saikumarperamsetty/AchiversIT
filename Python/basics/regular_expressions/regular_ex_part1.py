@@ -155,9 +155,18 @@
 # print(regex_split)      # output = ['Apple', 'Watermelon', 'Orange', 'Cocumber', 'Tomato'] it will return ouput in the form of list as comma seperated.
 
 
-# 7. ^symbol():
+# 7. ^symbol(): starts with
+# import re
+# regex_symbol = re.search('^Laerning','Learning Python is Very Easy!')       # output = False
+# if regex_symbol != None:
+#     print('True')
+# else:
+#     print('False')
+
+
+# 8. $symbol(): ends with
 import re
-regex_symbol = re.search('^Laerning','Learning Python is Very Easy!')       # output = False
+regex_symbol = re.search('Very Easy!$','Learning Python is Very Easy!')     # output = True
 if regex_symbol != None:
     print('True')
 else:
