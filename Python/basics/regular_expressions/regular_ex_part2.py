@@ -89,13 +89,25 @@
 
 
 # How to extract one file data into another file by using Regular Expression?
+# import re
+# f1 = open('input.txt','r')
+# f2 = open('output.txt','w')
+# for line in f1:
+#     list = re.findall(r'^[7-9]\d{9}',f1)
+#     for n in list:
+#         print(n+'\n')
+# print('Extracted all numbers')
+# f1.close()
+# f2.close()
+
+
+# Webscraping:
+# =============
+# Ex:
 import re
-f1 = open('input.txt','r')
-f2 = open('output.txt','w')
-for line in f1:
-    list = re.findall(r'^[7-9]\d{9}',f1)
-    for n in list:
-        print(n+'\n')
-print('Extracted all numbers')
-f1.close()
-f2.close()
+import urllib.request
+u = urllib.request.urlopen('http://www.redbus.in/info/contactus')
+text = u.read()
+numbers = re.findall('[0-9-]{7}[0-9-]+',str(text),re.i)
+for n in numbers:
+    print(n)
