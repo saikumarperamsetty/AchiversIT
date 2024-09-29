@@ -149,7 +149,16 @@
 
 
 # 6. split():
-import re
+# import re
 # regex_split = re.split('@','Apple,Watermelon,Orange,Cocumber,Tomato')   # here only that ',' only seperated
-regex_split = re.split('@','Apple@Watermelon@Orange@Cocumber@Tomato')    # here only that '@' only seperated
-print(regex_split)      # output = ['Apple', 'Watermelon', 'Orange', 'Cocumber', 'Tomato'] it will return ouput in the form of list as comma seperated.
+# regex_split = re.split('@','Apple@Watermelon@Orange@Cocumber@Tomato')    # here only that '@' only seperated
+# print(regex_split)      # output = ['Apple', 'Watermelon', 'Orange', 'Cocumber', 'Tomato'] it will return ouput in the form of list as comma seperated.
+
+
+# 7. ^symbol():
+import re
+regex_symbol = re.search('^Laerning','Learning Python is Very Easy!')       # output = False
+if regex_symbol != None:
+    print('True')
+else:
+    print('False')
