@@ -13,13 +13,21 @@
 
 
 # Grouping() and Capturing() in Regular Expression:
+# import re
+# text = 'Sai: 123-456-3391'
+# pattern = r'(\w+): (\d{3})-(\d{3})-(\d{4})'
+# match = re.search(pattern,text)
+# if match:
+#     print('Group 1:',match.group(1))    # output = Sai:
+#     print('Group 2:',match.group(2))    # output = 123
+#     print('Group 3:',match.group(3))    # output = 456
+#     print('Group 3:',match.group(4))    # output = 3391
+#     print('Group 0:',match.group(0))    # output = Sai: 123-456-3391
+
+
+# Anchors(): \b\b- it is boundary checking
 import re
-text = 'Sai: 123-456-3391'
-pattern = r'(\w+): (\d{3})-(\d{3})-(\d{4})'
-match = re.search(pattern,text)
-if match:
-    print('Group 1:',match.group(1))    # output = Sai:
-    print('Group 2:',match.group(2))    # output = 123
-    print('Group 3:',match.group(3))    # output = 456
-    print('Group 3:',match.group(4))    # output = 3391
-    print('Group 0:',match.group(0))    # output = Sai: 123-456-3391
+text = 'Hello World, Hello Python World'
+pattern = r'\bWorld\b'
+match = re.findall(pattern,text)    # it will result in list
+print(match)                        # output = ['World', 'World']
