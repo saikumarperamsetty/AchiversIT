@@ -47,14 +47,31 @@
 
 
 # Flags(Modifiers): 
+# import re
+# # pattern = r'Hello'  # for Multiline -> starts with
+# pattern = r'world'  # for Multiline -> ends with
+# text = """Hello orld
+# world Hello
+# Hello world
+# """
+# match = re.search(pattern,text,re.IGNORECASE | re.MULTILINE)
+# print(match)    # output(re.IGNORECASE) = <re.Match object; span=(0, 4), match='Hello'> -->it is for starts with
+# print(match)    # output(re.MULTILINE) = <re.Match object; span=(11, 16), match='world'> -->it is for ends with
+# print(match.group())    # output = Whatever string we are going to find That String it will return.
+
+
+# How to Define Format with a-z(a-k),digits(divisable by 3 only - 0369),a-zA-Z0-9#,A-Z{2} min 2 letters by using Regular Expression?
+# a-z(means a-k) only
+# digits(divisable by 3 only - 0369),
+# a-zA-Z0-9#,
+# A-Z{2} min 2 letters
+
+# Ans:
+# ---
 import re
-# pattern = r'Hello'  # for Multiline -> starts with
-pattern = r'world'  # for Multiline -> ends with
-text = """Hello orld
-world Hello
-Hello world
-"""
-match = re.search(pattern,text,re.IGNORECASE | re.MULTILINE)
-print(match)    # output(re.IGNORECASE) = <re.Match object; span=(0, 4), match='Hello'> -->it is for starts with
-print(match)    # output(re.MULTILINE) = <re.Match object; span=(11, 16), match='world'> -->it is for ends with
-print(match.group())    # output = Whatever string we are going to find That String it will return.
+str = input('Enter String to verify format: ')
+match = re.fullmatch('^[a-k][0369][a-zA-Z0-9#]{2,}$',str)
+if match != None:
+    print(match,"It's valid format")
+else:
+    print(match,"It's Not valid format")
