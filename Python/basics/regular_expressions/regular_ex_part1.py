@@ -141,8 +141,15 @@
 # 5. subn():
 # here 0 index represents the result String
 # here 1 index represents the Occurences
+# import re
+# substrn = re.subn('[a-z]','$','a0b2*be@kd%jo$')       # Wherever the applied symbol($) Pattern matches only that elements will changed with new string.
+# print(substrn)                                 # output = ($0$2*$$@$$%$$$,8) (here Where a-z elements is there that only will Change), and return How many times that symbol is occured
+# print('The Result String:',substrn[0])      # output = $0$2*$$@$$%$$$                          
+# print('The no of Occurences: ',substrn[1])  # 8
+
+
+# 6. split():
 import re
-substrn = re.subn('[a-z]','$','a0b2*be@kd%jo$')       # Wherever the applied symbol($) Pattern matches only that elements will changed with new string.
-print(substrn)                                 # output = ($0$2*$$@$$%$$$,8) (here Where a-z elements is there that only will Change), and return How many times that symbol is occured
-print('The Result String:',substrn[0])      # output = $0$2*$$@$$%$$$                          
-print('The no of Occurences: ',substrn[1])  # 8
+# regex_split = re.split('@','Apple,Watermelon,Orange,Cocumber,Tomato')   # here only that ',' only seperated
+regex_split = re.split('@','Apple@Watermelon@Orange@Cocumber@Tomato')    # here only that '@' only seperated
+print(regex_split)      # output = ['Apple', 'Watermelon', 'Orange', 'Cocumber', 'Tomato'] it will return ouput in the form of list as comma seperated.
