@@ -78,43 +78,79 @@
 # t2.start()
 
 
-queue module methods:
-=====================
-1. LIFO(LastInFirstOut)
-2. FIFO(FirstInLastOut)
-3. Priority()
+# queue module methods:
+# =====================
+# 1. LIFO(LastInFirstOut)
+# 2. FIFO(FirstInLastOut)
+# 3. Priority()
 
-1. LIFO(LastInFirstOut)
-=======================
-1.1 Queue():
-===========
-import queue
-q = queue.Queue()
-q.put(15)
-q.put(5)
-q.put(20)
-q.put(10)
-while not q.empty():
-    print(q.get())
+# 1. LIFO(LastInFirstOut)
+# =======================
+# 1.1 Queue():
+# ===========
+# import queue
+# q = queue.Queue()
+# q.put(15)
+# q.put(5)
+# q.put(20)
+# q.put(10)
+# while not q.empty():
+#     print(q.get())
 
-1.2 LifoQueue():
-===============
-import queue
-q = queue.LifoQueue()
-q.put(15)
-q.put(5)
-q.put(20)
-q.put(10)
-while not q.empty():
-    print(q.get())
+# 1.2 LifoQueue():
+# ===============
+# import queue
+# q = queue.LifoQueue()
+# q.put(15)
+# q.put(5)
+# q.put(20)
+# q.put(10)
+# while not q.empty():
+#     print(q.get())
 
-1.2 PriorityQueue():
-===================
-import queue
-q = queue.PriorityQueue()
-q.put((15,'SAI'))
-q.put((5,'NTR'))
-q.put((20,'SURAJ'))
-q.put((10,'PYTHON'))
-while not q.empty():
-    print(q.get())
+# 1.2 PriorityQueue():
+# ===================
+# import queue
+# q = queue.PriorityQueue()
+# q.put((15,'SAI'))
+# q.put((5,'NTR'))
+# q.put((20,'SURAJ'))
+# q.put((10,'PYTHON'))
+# while not q.empty():
+#     print(q.get())
+
+
+
+# Usage of Locks?
+# ===============
+# Excepition Handling in Threads:
+# ===============================
+# without Lock: means try,except and finally blocks
+# -------------
+import threading
+import time
+lock = threading.Lock()
+def safe_thread_func(thread_id):
+    print(f'Thread {thread_id} attempting to acquire Lock')
+    lock.acquire()
+    try:
+        print(f'Thread {thread_id} has acquired the Lock..')
+        time.sleep(2)
+        if thread_id == 2:
+           raise Exception('An error occured in Thread-2')
+        print(f'Thread {thread_id} has completed work')
+    except Exception as e:
+        print(f'Exception in Thread {thread_id}: {e}')
+    finally:
+        print(f'Thread {thread_id} is releasing the Lock')
+    lock.release()
+
+threads = []
+for i in range(1,4):
+    t = threading.Thread(target=safe_thread_func,args=(i,))
+    threads.append(t)
+    t.start()
+
+for t in threads:
+    t.join()
+print('All threads have finished')
