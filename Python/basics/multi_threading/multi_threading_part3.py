@@ -126,24 +126,50 @@
 # Excepition Handling in Threads:
 # ===============================
 # without Lock: means try,except and finally blocks
-# -------------
+# ============
+# import threading
+# import time
+# lock = threading.Lock()
+# def safe_thread_func(thread_id):
+#     print(f'Thread {thread_id} attempting to acquire Lock')
+#     lock.acquire()
+#     try:
+#         print(f'Thread {thread_id} has acquired the Lock..')
+#         time.sleep(2)
+#         if thread_id == 2:
+#            raise Exception('An error occured in Thread-2')
+#         print(f'Thread {thread_id} has completed work')
+#     except Exception as e:
+#         print(f'Exception in Thread {thread_id}: {e}')
+#     finally:
+#         print(f'Thread {thread_id} is releasing the Lock')
+#     lock.release()
+
+# threads = []
+# for i in range(1,4):
+#     t = threading.Thread(target=safe_thread_func,args=(i,))
+#     threads.append(t)
+#     t.start()
+
+# for t in threads:
+#     t.join()
+# print('All threads have finished')
+
+
+
+# with Lock:
+# ==========
 import threading
 import time
 lock = threading.Lock()
 def safe_thread_func(thread_id):
     print(f'Thread {thread_id} attempting to acquire Lock')
-    lock.acquire()
-    try:
+    with lock:
         print(f'Thread {thread_id} has acquired the Lock..')
         time.sleep(2)
         if thread_id == 2:
            raise Exception('An error occured in Thread-2')
         print(f'Thread {thread_id} has completed work')
-    except Exception as e:
-        print(f'Exception in Thread {thread_id}: {e}')
-    finally:
-        print(f'Thread {thread_id} is releasing the Lock')
-    lock.release()
 
 threads = []
 for i in range(1,4):
@@ -153,4 +179,3 @@ for i in range(1,4):
 
 for t in threads:
     t.join()
-print('All threads have finished')
