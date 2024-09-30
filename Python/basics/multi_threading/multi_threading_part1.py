@@ -76,15 +76,26 @@
 # print(f'Time taken: {end_time-begin_time}')
 
 
-# Setting and Getting Name of Thread?
+# Ex:3 Setting and Getting Name of Thread?
 # ===================================
 # Getting Name of Thread:
 # -----------------------
-import threading
-print('Getting Name of Thread:',threading.current_thread().name)
+# import threading
+# print('Getting Name of Thread:',threading.current_thread().name)
 
 # Setting Name of Thread:
 # -----------------------
+# import threading
+# threading.current_thread().name = 'New Thread Name'
+# print('Setting Name of Thread:',threading.current_thread().name)
+
+
+# Ex:4 How to Find Current and Main Thread Identification Number?
 import threading
-threading.current_thread().name = 'New Thread Name'
-print('Setting Name of Thread:',threading.current_thread().name)
+def child_thread_func():
+    print('Child Thread Identification Number: ',threading.current_thread().ident)
+
+if __name__ == '__main__':
+    print('Main Thread Identification Number: ',threading.current_thread().ident)
+    child_thread_obj = threading.Thread(target=child_thread_func)
+    child_thread_obj.start()
