@@ -128,23 +128,43 @@
 
 # Ex:6 How to Find wether the Thread is alive or not?
 # ===================================================
-from threading import Thread, current_thread
+# from threading import Thread, current_thread
+# import time
+# def thread_alive_or_not():
+#     print(current_thread().name),'started'
+#     time.sleep(3)
+#     print(current_thread().name),'ended'
+
+# t1 = Thread(target=thread_alive_or_not,name='Child_Thread1')
+# t2 = Thread(target=thread_alive_or_not,name='Child_Thread2')
+
+# t1.start()
+# t2.start()
+
+# print(t1.name,"is Alive",t1.is_alive())
+# print(t2.name,"is Alive",t2.is_alive())
+
+# time.sleep(5)
+
+# print(t1.name,"is Alive",t1.is_alive())
+# print(t2.name,"is Alive",t2.is_alive())
+
+
+# join() method:
+# ==============
+# --> if a Thread wants to wait untill completing the some other Thread.
+
+# Ex:7 Working of join() method in Multithreading?
+# ================================================
+from threading import Thread
 import time
-def thread_alive_or_not():
-    print(current_thread().name),'started'
-    time.sleep(3)
-    print(current_thread().name),'ended'
-
-t1 = Thread(target=thread_alive_or_not,name='Child_Thread1')
-t2 = Thread(target=thread_alive_or_not,name='Child_Thread2')
-
+def working_of_join_method():
+    for i in range(1,6):
+        print('Start Thread: ',i)
+        time.sleep(1)
+t1 = Thread(target=working_of_join_method)
 t1.start()
-t2.start()
 
-print(t1.name,"is Alive",t1.is_alive())
-print(t2.name,"is Alive",t2.is_alive())
-
-time.sleep(5)
-
-print(t1.name,"is Alive",t1.is_alive())
-print(t2.name,"is Alive",t2.is_alive())
+t1.join(10)
+for j in range(1,6):
+    print('Join Thread: ',j)
