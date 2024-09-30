@@ -12,35 +12,67 @@
 # release()
 # notify()
 # notifyAll()
-# wait()
-# wait(seconds)
+# wait()    --> wait until notification
+# wait(seconds) --> wait until notification or get expired
 
 # Ex: Condition() method in Inter Thread Communication?
 # ====================================================
+# import threading
+# import time
+# import random
+# items = []
+# c = threading.Condition()
+# def producer(c):
+#     while True:
+#         c.acquire()
+#         item = random.randint(1,101)
+#         print('Producer producing the item',item)
+#         items.append(item)
+#         print('Producer giving the Notification')
+#         c.notify()
+#         c.release()
+#         time.sleep(3)
+# def consumer(c):
+#     while True:
+#         c.acquire()
+#         print('Consumer waiting for updation')
+#         c.wait()
+#         print('Consumer consume the item',items.pop())
+#         c.release()
+#         time.sleep(3)
+# t1 = threading.Thread(target=producer,args=(c,))
+# t2 = threading.Thread(target=consumer,args=(c,))
+# t1.start()
+# t2.start()
+
+
+# 3. Queue():
+# ===========
+# methods are:
+# ------------
+# put(): put an item into the queue
+# get(): get an item into the queue
+
+# Ex: Queue() method in Inter Thread Communication?
+# =================================================
 import threading
 import time
 import random
-items = []
-c = threading.Condition()
-def producer(c):
+import queue
+q = queue.Queue()
+def producer(q):
     while True:
-        c.acquire()
         item = random.randint(1,101)
         print('Producer producing the item',item)
-        items.append(item)
-        print('Producer giving the Notification')
-        c.notify()
-        c.release()
+        q.put(item)
+        print('Producer giving Notification')
         time.sleep(3)
-def consumer(c):
+def consumer(q):
     while True:
-        c.acquire()
-        print('Consumer waiting for updation')
-        c.wait()
-        print('Consumer consume the item',items.pop())
-        c.release()
+        print('Consumer waiting for Updation')
+        print('Consumer consumed the item',q.get())
         time.sleep(3)
-t1 = threading.Thread(target=producer,args=(c,))
-t2 = threading.Thread(target=consumer,args=(c,))
+t1 = threading.Thread(target=producer,args=(q,))
+t2 = threading.Thread(target=consumer,args=(q,))
 t1.start()
-t2.start()
+t2.start()      
