@@ -91,6 +91,7 @@
 
 
 # Ex:4 How to Find Current and Main Thread Identification Number?
+# ===============================================================
 # import threading
 # def child_thread_func():
 #     print('Child Thread Identification Number: ',threading.current_thread().ident)
@@ -102,23 +103,48 @@
 
 
 # Ex:5 How to Find how many Threads are active?
-from threading import Thread, current_thread, active_count
-import time
-def thread_active():
-    print(current_thread().name),'..started'
-    time.sleep(3)
-    print(current_thread().name),'..ended'
-if __name__ == '__main__':
-    print('Main Thread Started')
-    print('The Number of Active Threads:',active_count())
+# =============================================
+# from threading import Thread, current_thread, active_count
+# import time
+# def thread_active():
+#     print(current_thread().name),'..started'
+#     time.sleep(3)
+#     print(current_thread().name),'..ended'
+# if __name__ == '__main__':
+#     print('Main Thread Started')
+#     print('The Number of Active Threads:',active_count())
 
-    t1 = Thread(target=thread_active,name='Child_Thread1')
-    t2 = Thread(target=thread_active,name='Child_Thread2')
-    t3 = Thread(target=thread_active,name='Child_Thread3')
-    t1.start()
-    t2.start()
-    t3.start()
-    print('The no of active Threads after thread Creation:',active_count())
-    time.sleep(5)
-    print('The no of active Threads after waiting::',active_count())
-    print('Main Thread Ended..')
+#     t1 = Thread(target=thread_active,name='Child_Thread1')
+#     t2 = Thread(target=thread_active,name='Child_Thread2')
+#     t3 = Thread(target=thread_active,name='Child_Thread3')
+#     t1.start()
+#     t2.start()
+#     t3.start()
+#     print('The no of active Threads after thread Creation:',active_count())
+#     time.sleep(5)
+#     print('The no of active Threads after waiting::',active_count())
+#     print('Main Thread Ended..')
+
+
+# Ex:6 How to Find wether the Thread is alive or not?
+# ===================================================
+from threading import Thread, current_thread
+import time
+def thread_alive_or_not():
+    print(current_thread().name),'started'
+    time.sleep(3)
+    print(current_thread().name),'ended'
+
+t1 = Thread(target=thread_alive_or_not,name='Child_Thread1')
+t2 = Thread(target=thread_alive_or_not,name='Child_Thread2')
+
+t1.start()
+t2.start()
+
+print(t1.name,"is Alive",t1.is_alive())
+print(t2.name,"is Alive",t2.is_alive())
+
+time.sleep(5)
+
+print(t1.name,"is Alive",t1.is_alive())
+print(t2.name,"is Alive",t2.is_alive())
