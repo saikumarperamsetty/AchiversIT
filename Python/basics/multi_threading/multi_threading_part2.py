@@ -27,18 +27,32 @@
 
 # Ex:3 How to check Daemon Nature and Non Daemon Nature of current Executing Thread or any other Thread?
 # ======================================================================================================
+# from threading import *
+# import time
+# def check_daemon_behaviour():
+#     for i in range(1,6):
+#         print('child thread: ',i)
+#         time.sleep(1)
+# t = Thread(target=check_daemon_behaviour)
+# t.setDaemon(True)
+
+# t.start()
+# time.sleep(5)
+
+# for j in range(1,6):
+#     print('main thread: ',j)
+# print('end of main thread')
+
+
+# Synchronization in Multithreading:
+# ==================================
 from threading import *
 import time
-def check_daemon_behaviour():
+def wish(name):
     for i in range(1,6):
-        print('child thread: ',i)
-        time.sleep(1)
-t = Thread(target=check_daemon_behaviour)
-t.setDaemon(True)
-
-t.start()
-time.sleep(5)
-
-for j in range(1,6):
-    print('main thread: ',j)
-print('end of main thread')
+        print('Good Evening ',name)
+        time.sleep(2)
+t1 = Thread(target=wish,args=('SAI',))
+t2 = Thread(target=wish,args=('NTR',))
+t1.start()
+t2.start()
