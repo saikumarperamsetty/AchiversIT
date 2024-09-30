@@ -139,26 +139,68 @@
 
 # 4. BoundedSemaphore(count): this will release the lock for particular counts only.
 # ==========================
-from threading import *
+# from threading import *
+# import time
+# s = BoundedSemaphore(3)
+# def wish(name):
+#     s.acquire()
+#     for j in range(1,6):
+#         print('Good Evening ',name,j)
+#         time.sleep(3)
+#     s.release()
+#     s.release()
+#     s.release()
+# t1 = Thread(target=wish,args=('SAI',))
+# t2 = Thread(target=wish,args=('NTR',))
+# t3 = Thread(target=wish,args=('SURAJ',))
+# t4 = Thread(target=wish,args=('Alice',))
+# t5 = Thread(target=wish,args=('Bob',))
+# t6 = Thread(target=wish,args=('John',))
+# t1.start()
+# t2.start()
+# t3.start()
+# t4.start()
+# t5.start()
+# t6.start()
+
+
+# Inter Thread Communication:
+# ===========================
+# 1. Event()
+# 2. Condition()
+# 3. Queue()
+# methods in Inter Thread Communication:
+# ------------------------------------
+# 1. set()
+# 2. clear()
+# 3. isSet()
+# 4. wait()
+# 5. wait(seconds)
+
+# Ex: Realtime Example for Inter Thread Communication?
+import threading
 import time
-s = BoundedSemaphore(3)
-def wish(name):
-    s.acquire()
-    for j in range(1,6):
-        print('Good Evening ',name,j)
-        time.sleep(3)
-    s.release()
-    s.release()
-    s.release()
-t1 = Thread(target=wish,args=('SAI',))
-t2 = Thread(target=wish,args=('NTR',))
-t3 = Thread(target=wish,args=('SURAJ',))
-t4 = Thread(target=wish,args=('Alice',))
-t5 = Thread(target=wish,args=('Bob',))
-t6 = Thread(target=wish,args=('John',))
+event = threading.Event()
+def trafficpolice():
+    while True:
+        time.sleep(5)
+        print('Traffic Police given GREEN Signal')
+        event.set()
+        time.sleep(10)
+        print('Traffic Police giving RED Signal')
+        event.clear()
+def driver():
+    num = 0
+    while True:
+        print('Driver waiting for GREEN Signal')
+        event.wait()
+        print('Traffic Signal is GREEN.. Vehicles can move')
+        while event.isSet():
+            num = num+1
+            print('Vehicle No',num,'Crossing the Signal')
+            time.sleep(2)
+        print('Traffic Signal is RED... Drivers have to wait')
+t1 = threading.Thread(target=trafficpolice)
+t2 = threading.Thread(target=driver)
 t1.start()
 t2.start()
-t3.start()
-t4.start()
-t5.start()
-t6.start()
