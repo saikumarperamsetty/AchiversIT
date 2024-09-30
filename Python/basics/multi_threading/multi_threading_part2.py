@@ -46,13 +46,46 @@
 
 # Synchronization in Multithreading:
 # ==================================
+# from threading import *
+# import time
+# def wish(name):
+#     for i in range(1,6):
+#         print('Good Evening ',name)
+#         time.sleep(2)
+# t1 = Thread(target=wish,args=('SAI',))
+# t2 = Thread(target=wish,args=('NTR',))
+# t1.start()
+# t2.start()
+
+
+# Synchronixation Methods:
+# ========================
+1. Lock(): this will release Lock only one time.
+2. RLock(): this will release Lock only two times.
+3. Semaphore(): 
+
+# 1. Lock():
+# ==========
 from threading import *
 import time
+l = Lock()
 def wish(name):
-    for i in range(1,6):
-        print('Good Evening ',name)
-        time.sleep(2)
+        l.acquire()
+        for i in range(1,6):
+                print('Good Evening ',name)
+                time.sleep(2)
+        l.release()
+        l.acquire()
 t1 = Thread(target=wish,args=('SAI',))
 t2 = Thread(target=wish,args=('NTR',))
 t1.start()
 t2.start()
+
+# 1.1 Lock():
+# ==========
+from threading import *
+l = Lock()
+l.acquire()
+print('Main Thread trying to execute lock')
+l.acquire()
+print('Main Thread trying to execute lock')
