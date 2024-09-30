@@ -46,6 +46,7 @@
 
 # Synchronization in Multithreading:
 # ==================================
+# --> It will over come the inconsistency problem, then we can predict the output clearly.
 # from threading import *
 # import time
 # def wish(name):
@@ -62,7 +63,8 @@
 # ========================
 # 1. Lock(): this will release Lock only one time.
 # 2. RLock(): this will release Lock only two times.
-# 3. Semaphore(): 
+# 3. Semaphore(): this will release the lock for all counts.
+# 4. BoundedSemaphore(count): this will release the lock for particular counts only.
 
 # 1. Lock():
 # ==========
@@ -93,24 +95,70 @@
 
 # 2. RLock():
 # ==========
+# from threading import *
+# l = RLock()
+# def factorial(n):
+
+#     l.acquire()
+
+#     if n == 0:
+#         result = 1
+#     else:
+#         result = n * factorial(n-1)
+#     l.release()
+#     return result
+
+# def result_func(n):
+#     print('The Factorial of ', n, factorial(n))
+
+# t1 = Thread(target=result_func,args=(5,))
+# t2 = Thread(target=result_func,args=(9,))
+
+# t1.start()
+# t2.start()
+
+
+# 3. Semaphore(count): this will release the lock for all counts.
+# ====================
+# from threading import *
+# import time
+# s = Semaphore(3)
+# def wish(name):
+#     s.acquire()
+#     for i in range(1,6):
+#         print('Good Evening ',name)
+#         time.sleep(2)
+#     s.release()
+# t1 = Thread(target=wish,args=('Hello',))
+# t2 = Thread(target=wish,args=('Greet',))
+# t3 = Thread(target=wish,args=('Thanks',))
+# t1.start()
+# t2.start()
+# t3.start()
+
+
+# 4. BoundedSemaphore(count): this will release the lock for particular counts only.
+# ==========================
 from threading import *
-l = RLock()
-def factorial(n):
-    
-    l.acquire()
-
-    if n == 0:
-        result = 1
-    else:
-        result = n * factorial(n-1)
-    l.release()
-    return result
-
-def result_func(n):
-    print('The Factorial of ', n, factorial(n))
-
-t1 = Thread(target=result_func,args=(5,))
-t2 = Thread(target=result_func,args=(9,))
-
+import time
+s = BoundedSemaphore(3)
+def wish(name):
+    s.acquire()
+    for j in range(1,6):
+        print('Good Evening ',name,j)
+        time.sleep(3)
+    s.release()
+    s.release()
+    s.release()
+t1 = Thread(target=wish,args=('SAI',))
+t2 = Thread(target=wish,args=('NTR',))
+t3 = Thread(target=wish,args=('SURAJ',))
+t4 = Thread(target=wish,args=('Alice',))
+t5 = Thread(target=wish,args=('Bob',))
+t6 = Thread(target=wish,args=('John',))
 t1.start()
 t2.start()
+t3.start()
+t4.start()
+t5.start()
+t6.start()
