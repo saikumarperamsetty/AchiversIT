@@ -60,32 +60,57 @@
 
 # Synchronixation Methods:
 # ========================
-1. Lock(): this will release Lock only one time.
-2. RLock(): this will release Lock only two times.
-3. Semaphore(): 
+# 1. Lock(): this will release Lock only one time.
+# 2. RLock(): this will release Lock only two times.
+# 3. Semaphore(): 
 
 # 1. Lock():
 # ==========
-from threading import *
-import time
-l = Lock()
-def wish(name):
-        l.acquire()
-        for i in range(1,6):
-                print('Good Evening ',name)
-                time.sleep(2)
-        l.release()
-        l.acquire()
-t1 = Thread(target=wish,args=('SAI',))
-t2 = Thread(target=wish,args=('NTR',))
-t1.start()
-t2.start()
+# from threading import *
+# import time
+# l = Lock()
+# def wish(name):
+#         l.acquire()
+#         for i in range(1,6):
+#                 print('Good Evening ',name)
+#                 time.sleep(2)
+#         l.release()
+#         l.acquire()
+# t1 = Thread(target=wish,args=('SAI',))
+# t2 = Thread(target=wish,args=('NTR',))
+# t1.start()
+# t2.start()
 
 # 1.1 Lock():
 # ==========
+# from threading import *
+# l = Lock()
+# l.acquire()
+# print('Main Thread trying to execute lock')
+# l.acquire()
+# print('Main Thread trying to execute lock')
+
+
+# 2. RLock():
+# ==========
 from threading import *
-l = Lock()
-l.acquire()
-print('Main Thread trying to execute lock')
-l.acquire()
-print('Main Thread trying to execute lock')
+l = RLock()
+def factorial(n):
+    
+    l.acquire()
+
+    if n == 0:
+        result = 1
+    else:
+        result = n * factorial(n-1)
+    l.release()
+    return result
+
+def result_func(n):
+    print('The Factorial of ', n, factorial(n))
+
+t1 = Thread(target=result_func,args=(5,))
+t2 = Thread(target=result_func,args=(9,))
+
+t1.start()
+t2.start()
