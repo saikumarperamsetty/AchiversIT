@@ -91,11 +91,34 @@
 
 
 # Ex:4 How to Find Current and Main Thread Identification Number?
-import threading
-def child_thread_func():
-    print('Child Thread Identification Number: ',threading.current_thread().ident)
+# import threading
+# def child_thread_func():
+#     print('Child Thread Identification Number: ',threading.current_thread().ident)
 
+# if __name__ == '__main__':
+#     print('Main Thread Identification Number: ',threading.current_thread().ident)
+#     child_thread_obj = threading.Thread(target=child_thread_func)
+#     child_thread_obj.start()
+
+
+# Ex:5 How to Find how many Threads are active?
+from threading import Thread, current_thread, active_count
+import time
+def thread_active():
+    print(current_thread().name),'..started'
+    time.sleep(3)
+    print(current_thread().name),'..ended'
 if __name__ == '__main__':
-    print('Main Thread Identification Number: ',threading.current_thread().ident)
-    child_thread_obj = threading.Thread(target=child_thread_func)
-    child_thread_obj.start()
+    print('Main Thread Started')
+    print('The Number of Active Threads:',active_count())
+
+    t1 = Thread(target=thread_active,name='Child_Thread1')
+    t2 = Thread(target=thread_active,name='Child_Thread2')
+    t3 = Thread(target=thread_active,name='Child_Thread3')
+    t1.start()
+    t2.start()
+    t3.start()
+    print('The no of active Threads after thread Creation:',active_count())
+    time.sleep(5)
+    print('The no of active Threads after waiting::',active_count())
+    print('Main Thread Ended..')
