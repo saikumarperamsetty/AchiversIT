@@ -38,39 +38,53 @@
 # Ex:2 How to Squares and Double the numbers using with and without Thread class?
 # without Threading Concept:
 # =========================
-import time
-numbers = [1,2,3,4,5]
-def double_numbers(numbers):
-    for n in numbers:
-        print('Duble Nums = ', 2*n)
-def square_numbers(numbers):
-    for n in numbers:
-        print('Square Nums = ', n*n)
+# import time
+# numbers = [1,2,3,4,5]
+# def double_numbers(numbers):
+#     for n in numbers:
+#         print('Duble Nums = ', 2*n)
+# def square_numbers(numbers):
+#     for n in numbers:
+#         print('Square Nums = ', n*n)
 
-begin_time = time.time()
-double_numbers(numbers)
-square_numbers(numbers)
-end_time = time.time()
-print(f'Time taken: {end_time-begin_time}')
+# begin_time = time.time()
+# double_numbers(numbers)
+# square_numbers(numbers)
+# end_time = time.time()
+# print(f'Time taken: {end_time-begin_time}')
 
 # with Threading Concept:
 # ======================
-import threading
-import time
-numbers = [1,2,3,4,5]
-def double_numbers(numbers):
-    for n in numbers:
-        print('Duble Nums = ', 2*n)
-def square_numbers(numbers):
-    for n in numbers:
-        print('Square Nums = ', n*n)
+# import threading
+# import time
+# numbers = [1,2,3,4,5]
+# def double_numbers(numbers):
+#     for n in numbers:
+#         print('Duble Nums = ', 2*n)
+# def square_numbers(numbers):
+#     for n in numbers:
+#         print('Square Nums = ', n*n)
 
-begin_time = time.time()
-threading1 = threading.Thread(target=double_numbers,args=(numbers,))
-threading2 = threading.Thread(target=square_numbers,args=(numbers,))
-threading1.start()
-threading2.start()
-threading1.join()
-threading2.join()
-end_time = time.time()
-print(f'Time taken: {end_time-begin_time}')
+# begin_time = time.time()
+# threading1 = threading.Thread(target=double_numbers,args=(numbers,))
+# threading2 = threading.Thread(target=square_numbers,args=(numbers,))
+# threading1.start()
+# threading2.start()
+# threading1.join()
+# threading2.join()
+# end_time = time.time()
+# print(f'Time taken: {end_time-begin_time}')
+
+
+# Setting and Getting Name of Thread?
+# ===================================
+# Getting Name of Thread:
+# -----------------------
+import threading
+print('Getting Name of Thread:',threading.current_thread().name)
+
+# Setting Name of Thread:
+# -----------------------
+import threading
+threading.current_thread().name = 'New Thread Name'
+print('Setting Name of Thread:',threading.current_thread().name)
