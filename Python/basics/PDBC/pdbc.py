@@ -27,17 +27,40 @@
 # 11. Scalable:
 
 
-Python Database Connection:
+# Python Database Connection:
 # ===========================
-Ex: How to Give connection for any Database in Python?
+# Ex: How to Give connection for any Database in Python?
 # ======================================================
 
-Standard Steps for any Database:
+# Standard Steps for any Database:
 # ================================
-For MYSQL Databse:
+# For MYSQL Databse:
 # ------------------
-Step 1: myssql.connector.connect()
-Step 2: conn.cursor()
-Step 3: cursor.execute()
-Step 4: conn.commit()
-Step 5: cursor.close() and conn.close()
+# Step 1: myssql.connector.connect()
+# Step 2: conn.cursor()
+# Step 3: cursor.execute()
+# Step 4: conn.commit()
+# Step 5: cursor.close() and conn.close()
+
+# sqlite3 Database:
+# =================
+# Ex: How to Write Queries in sqlite3 Database?
+import sqlite3
+connection = sqlite3.connect('sqlite3.db')
+
+cursor = connection.cursor()
+
+cursor.execute('''CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,name TEXT,age INTEGER)''')
+
+cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('SAI',28))
+cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('NTR',41))
+
+connection.commit()
+
+cursor.execute('''SELECT * FROM users''')
+
+rows = cursor.fetchall()
+for row in rows:
+    print(row)
+    
+connection.close()
