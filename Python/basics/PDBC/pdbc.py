@@ -45,22 +45,58 @@
 # sqlite3 Database:
 # =================
 # Ex: How to Write Queries in sqlite3 Database?
-import sqlite3
-connection = sqlite3.connect('sqlite3.db')
+# import sqlite3
+# connection = sqlite3.connect('sqlite3.db')
 
+# cursor = connection.cursor()
+
+# cursor.execute('''CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,name TEXT,age INTEGER)''')
+
+# cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('SAI',28))
+# cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('NTR',41))
+
+# connection.commit()
+
+# cursor.execute('''SELECT * FROM users''')
+
+# rows = cursor.fetchall()
+# for row in rows:
+#     print(row)
+
+# connection.close()
+
+
+
+# Python - MySQL Database connection:
+# ===================================
+# Ex: How to Give connection for Python - MySQL Database in Python?
+# =================================================================
+# First istall MySQL environment on your Python.
+# pip install mysql-connector-python
+import mysql.connector
+from config import DB_CONFIG
+connection = mysql.connector.connect(
+    host = DB_CONFIG["host"],
+    user = DB_CONFIG['user'],
+    password = DB_CONFIG['host'],
+    database = DB_CONFIG['dbconnection']
+)
 cursor = connection.cursor()
+cursor.execute('''
+CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,name TEXT,age INTEGER)''')
 
-cursor.execute('''CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY,name TEXT,age INTEGER)''')
-
-cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('SAI',28))
-cursor.execute('''INSERT INTO users(name,age) VALUES(?,?) ''',('NTR',41))
+cursor.execute('''
+INSERT INTO users(name,age) VALUES(%s,%s)''',('Alice',30))
+cursor.execute('''
+INSERT INTO users(name,age) VALUES(%s,%s)''',('Bob',27))
 
 connection.commit()
 
-cursor.execute('''SELECT * FROM users''')
+cursor.execute('''
+SELECT * FROM users''')
 
 rows = cursor.fetchall()
 for row in rows:
     print(row)
-    
+
 connection.close()
