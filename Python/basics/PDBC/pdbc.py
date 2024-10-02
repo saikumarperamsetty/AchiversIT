@@ -105,49 +105,58 @@
 
 
 # Ex: Realtime Example for Python - MySQL Database for CRUD Operations?
-import mysql.connector
-from config1 import DB_CONFIG1
+# import mysql.connector
+# from config1 import DB_CONFIG1
 
-connection = mysql.connector.connect(
+# connection = mysql.connector.connect(
 
-    host = DB_CONFIG1['localhost'],
-    user = DB_CONFIG1['root'],
-    password = DB_CONFIG1['root'],
-    database = DB_CONFIG1['dbconnection']
+#     host = DB_CONFIG1['localhost'],
+#     user = DB_CONFIG1['root'],
+#     password = DB_CONFIG1['root'],
+#     database = DB_CONFIG1['dbconnection']
     
-)
+# )
 
-cursor = connection.cursor()
+# cursor = connection.cursor()
 
 # CREATE QUERY
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS employees(
-               id INT AUTO_INCREMENT PRIMARY KEY,
-               name VARCHAR(50),
-               jobrole VARCHAR(50),
-               salary DECIMAL(10,2)
-               )
-''')
+# cursor.execute('''
+# CREATE TABLE IF NOT EXISTS employees(
+#                id INT AUTO_INCREMENT PRIMARY KEY,
+#                name VARCHAR(50),
+#                jobrole VARCHAR(50),
+#                salary DECIMAL(10,2)
+#                )
+# ''')
 
 # INSERT QUERY
-insert_query = 'INSERT INTO employees(name,jobrole,salry) VALUES(%s,%s,%s)'
-execute_insert_data = ('SAI KUMAR','Python Developer',80000)
-cursor.execute(insert_query,execute_insert_data)
+# insert_query = 'INSERT INTO employees(name,jobrole,salry) VALUES(%s,%s,%s)'
+# execute_insert_data = ('SAI KUMAR','Python Developer',80000)
+# cursor.execute(insert_query,execute_insert_data)
 
 # UPDATE QUERY
-update_query_data = 'UPDATE employees SET salary = %s WHERE name = "SAI KUMAR"'
-cursor.execute(update_query_data,(90000,'SAI KUMAR'))
+# update_query_data = 'UPDATE employees SET salary = %s WHERE name = "SAI KUMAR"'
+# cursor.execute(update_query_data,(90000,'SAI KUMAR'))
 
 # DELETE QUERY
-delete_query_data = 'DELETE FROM employees WHERE name = %s'
-cursor.execute(delete_query_data,('SAI KUMAR',))
+# delete_query_data = 'DELETE FROM employees WHERE name = %s'
+# cursor.execute(delete_query_data,('SAI KUMAR',))
 
-connection.commit()
+# Transaction and Rollback QUERY and If any Error occures How we can display through try and except blocks?
+try:
+    connection.start_transaction()
+    cursor.execute('INSERT INTO employees(name,jobrole,salary) VALUES(%s,%s,%s)'),('Jeorge','Analyst','50000')
+    cursor.execute('INSERT INTO employees(name,jobrole,salary) VALUES(%s,%s,%s)'),('levies','HR','60000')
+    connection.commit()
 
-cursor.execute('SELECT * FROM employees')
+except mysql.connector.Error as err:
+    connection.rollback()
+    print(f'Error:{err}')
 
-rows = cursor.fetchAll()
-for row in rows:
-    print(row)
+# cursor.execute('SELECT * FROM employees')
 
-connection.close()
+# rows = cursor.fetchAll()
+# for row in rows:
+#     print(row)
+
+# connection.close()
