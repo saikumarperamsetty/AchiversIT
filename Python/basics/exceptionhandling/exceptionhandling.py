@@ -39,14 +39,25 @@
 
 
 # Ex:6 How to handle Different types Exceptions?
+# try:
+#     print('Welcome to Exception Handling..')
+#     print(x)
+#     print(10/0)
+#     print(10/'ten')
+# except ZeroDivisionError:
+#     print('Zero Division Error')
+# except TypeError:
+#     print('Type Error')
+# except NameError:
+#     print('Name Error')
+
+
+# Ex:7 How to input from cmd prompt handle Different types Exceptions?
 try:
-    print('Welcome to Exception Handling..')
-    print(x)
-    print(10/0)
-    print(10/'ten')
+    x = int(input('Enter x value:'))
+    y = int(input('Enter y value:'))
+    print(x/y)
+except ArithmeticError:
+    print('Arithmetic Error')
 except ZeroDivisionError:
-    print('Zero Division Error')
-except TypeError:
-    print('Type Error')
-except NameError:
-    print('Name Error')
+    print('Arithmetic Error')
