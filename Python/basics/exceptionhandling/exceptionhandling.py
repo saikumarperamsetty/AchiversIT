@@ -53,11 +53,30 @@
 
 
 # Ex:7 How to input from cmd prompt handle Different types Exceptions?
+# try:
+#     x = int(input('Enter x value:'))
+#     y = int(input('Enter y value:'))
+#     print(x/y)
+# except ArithmeticError:
+#     print('Arithmetic Error')
+# except ZeroDivisionError:
+#     print('Arithmetic Error')
+
+
+# Ex:8 try except blocks with inner try except block?
 try:
-    x = int(input('Enter x value:'))
-    y = int(input('Enter y value:'))
-    print(x/y)
-except ArithmeticError:
-    print('Arithmetic Error')
-except ZeroDivisionError:
-    print('Arithmetic Error')
+    print('Statement-1')
+    # print('Statement-2')
+    print(10/2)
+    print('Statement-3')
+    try:
+        print('Statement-4')
+        print('Statement-5')
+        print('Statement-6')
+    except:
+        print('Statement-7')
+except:
+    print('Statement-8')
+finally:
+    print('Statement-9')
+        
