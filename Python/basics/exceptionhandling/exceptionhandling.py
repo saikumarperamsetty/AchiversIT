@@ -64,19 +64,34 @@
 
 
 # Ex:8 try except blocks with inner try except block?
-try:
-    print('Statement-1')
-    # print('Statement-2')
-    print(10/2)
-    print('Statement-3')
-    try:
-        print('Statement-4')
-        print('Statement-5')
-        print('Statement-6')
-    except:
-        print('Statement-7')
-except:
-    print('Statement-8')
-finally:
-    print('Statement-9')
+# try:
+#     print('Statement-1')
+#     # print('Statement-2')
+#     print(10/2)
+#     print('Statement-3')
+#     try:
+#         print('Statement-4')
+#         print('Statement-5')
+#         print('Statement-6')
+#     except:
+#         print('Statement-7')
+# except:
+#     print('Statement-8')
+# finally:
+#     print('Statement-9')
         
+
+# Ex:9 How to Create User Defined Exceptions in Python?
+class TooYoungException(Exception):
+    def __init__(self,args):
+        self.msg = args
+class TooOldException(Exception):
+    def __init__(self,args):
+        self.msg = args
+age = int(input('Enter your Age:'))
+if age <18:
+    raise TooYoungException('Too Young for Marriage')
+elif age >60:
+    raise TooOldException('Too Old for Marriage')
+else:
+    print('You are not eligible for Marriage')
